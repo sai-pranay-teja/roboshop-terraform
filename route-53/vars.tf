@@ -1,3 +1,3 @@
 variable "Name" {}
-variable "zone-id" {}
+variable "zone_id" {}
 variable "records"{}
