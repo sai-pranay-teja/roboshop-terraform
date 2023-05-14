@@ -1,7 +1,4 @@
-provider "aws" {
-    region="us-east-1"
-  
-}
+
 
 resource "aws_spot_instance_request" "components" {
     
