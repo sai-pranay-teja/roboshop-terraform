@@ -10,7 +10,7 @@ resource "aws_spot_instance_request" "components" {
     wait_for_fulfillment = true
     spot_type="persistent"
     instance_interruption_behavior="stop"
-    security_groups = [ "sg-036e9bfb37a180657" ]
+    security_groups = [ aws_security_group.all_traffic.id ]
 
     tags = {
         Name = each.value["Name"]
