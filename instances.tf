@@ -1,3 +1,8 @@
+provider "aws" {
+    region="us-east-1"
+  
+}
+
 resource "aws_spot_instance_request" "components" {
     for_each = var.components
     ami           = "ami-0b5a2b5b8f2be4ec2"
