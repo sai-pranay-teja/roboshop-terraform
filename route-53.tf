@@ -5,5 +5,5 @@ resource "aws_route53_record" "component-records" {
     name    = "${each.value["Name"]}.practise-devops.online"
     type    = "A"
     ttl     = 30
-    records = [aws_spot_instance_request.components.public_ip]
+    records = [aws_spot_instance_request.components[each.key].public_ip]
 }
