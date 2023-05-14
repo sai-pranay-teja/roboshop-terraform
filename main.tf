@@ -16,7 +16,7 @@ module "instances" {
     instance_type=each.value["instance_type"]
     Name=each.value["Name"]
     
-    security-id=module.security-groups[each.key].security-id
+    security-id=module.security-groups.security-id
   
 }
 module "route-53" {
