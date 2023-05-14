@@ -4,16 +4,16 @@ provider "aws" {
 }
 
 resource "aws_spot_instance_request" "components" {
-    for_each = var.components
+    
     ami           = "ami-0b5a2b5b8f2be4ec2"
-    instance_type = each.value["instance_type"]
+    instance_type = var.instance_type
     wait_for_fulfillment = true
     spot_type="persistent"
     instance_interruption_behavior="stop"
-    vpc_security_group_ids = [ aws_security_group.all_traffic.id ]
+    vpc_security_group_ids = [ var.security-id ]
 
     tags = {
-        Name = each.value["Name"]
+        Name = var.Name
     }
 
     timeouts {
