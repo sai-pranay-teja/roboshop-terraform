@@ -18,20 +18,23 @@ resource "aws_spot_instance_request" "components" {
         delete = "10m"
     }
 
-/* provisioner "remote-exec" {
+provisioner "remote-exec" {
     connection {
         host = aws_spot_instance_request.components.public_ip
         user = "centos"
         password = "DevOps321"
     }
     inline=[
+        "sudo git clone https://github.com/sai-pranay-teja/practise-roboshop-shell",
+        "cd practise-roboshop-shell",
+        "sudo bash ${var.component}.sh"
 
     ]  
 
 
 
       
-} */
+}
 }
 
 
