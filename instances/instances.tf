@@ -27,7 +27,7 @@ provisioner "remote-exec" {
     inline=[
         "sudo git clone https://github.com/sai-pranay-teja/practise-roboshop-shell",
         "cd practise-roboshop-shell",
-        "sudo bash ${var.component}.sh"
+        "sudo bash ${var.Name}.sh"
 
     ]  
 
