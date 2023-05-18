@@ -10,15 +10,6 @@ module "security-groups" {
   
 }
 
-module "instances" {
-    for_each = var.components
-    source = "./instances"
-    instance_type=each.value["instance_type"]
-    Name=each.value["Name"]
-    
-    security-id=module.security-groups.security-id
-  
-}
 module "route-53" {
 
     for_each = var.components
@@ -30,6 +21,17 @@ module "route-53" {
     records=module.instances[each.key].records
   
 }
+
+module "instances" {
+    for_each = var.components
+    source = "./instances"
+    instance_type=each.value["instance_type"]
+    Name=each.value["Name"]
+    
+    security-id=module.security-groups.security-id
+  
+}
+
 
 module "ec2-tags" {
     depends_on = [ module.instances ]
