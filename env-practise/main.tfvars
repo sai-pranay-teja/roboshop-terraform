@@ -5,16 +5,6 @@ components={
         instance_type="t3.micro"
 
     }
-    cart={
-        Name="cart"
-        instance_type="t3.micro"
-
-    }
-    catalogue={
-        Name="catalogue"
-        instance_type="t3.micro"
-
-    }
     mongodb={
         Name="mongodb"
         instance_type="t3.micro"
@@ -25,11 +15,6 @@ components={
         instance_type="t3.micro"
 
     }
-    payment={
-        Name="payment"
-        instance_type="t3.micro"
-
-    }
     rabbitmq={
         Name="rabbitmq"
         instance_type="t3.micro"
@@ -37,6 +22,22 @@ components={
     }
     redis={
         Name="redis"
+        instance_type="t3.micro"
+
+    }
+    cart={
+        Name="cart"
+        instance_type="t3.micro"
+
+    }
+    catalogue={
+        Name="catalogue"
+        instance_type="t3.micro"
+
+    }
+
+    payment={
+        Name="payment"
         instance_type="t3.micro"
 
     }
