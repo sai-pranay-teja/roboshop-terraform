@@ -20,7 +20,7 @@ module "instances" {
   
 }
 module "route-53" {
-    depends_on = [ module.instances ]
+
     for_each = var.components
     source = "./route-53"
     zone_id = var.zone_id
