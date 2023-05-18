@@ -34,6 +34,7 @@ resource "aws_spot_instance_request" "components" {
 }
 
 resource "null_resource" "resource-creation" {
+    depends_on = [ aws_route53_record.component-records ]
     provisioner "remote-exec" {
     connection {
         host = aws_spot_instance_request.components.public_ip
