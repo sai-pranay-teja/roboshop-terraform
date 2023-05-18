@@ -4,7 +4,7 @@ resource "aws_route53_record" "component-records" {
     name    = "${var.Name}.practise-devops.online"
     type    = "A"
     ttl     = 30
-    records = [aws_spot_instance_request.components.public_ip]
+    records = [aws_spot_instance_request.components.private_ip]
 }
 
 
@@ -28,8 +28,9 @@ resource "aws_spot_instance_request" "components" {
         create = "10m"
         delete = "10m"
     }
+    user_data = "${file("user-data-apache.sh")}"
 
-provisioner "remote-exec" {
+/* provisioner "remote-exec" {
     connection {
         host = aws_spot_instance_request.components.public_ip
         user = "centos"
@@ -45,7 +46,7 @@ provisioner "remote-exec" {
 
 
       
-}
+} */
 }
 
 
