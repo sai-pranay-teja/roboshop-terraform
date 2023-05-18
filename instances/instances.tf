@@ -30,7 +30,11 @@ resource "aws_spot_instance_request" "components" {
     }
     #user_data = "${file("user-data-apache.sh")}"
 
-provisioner "remote-exec" {
+
+}
+
+resource "null_resource" "resource-creation" {
+    provisioner "remote-exec" {
     connection {
         host = aws_spot_instance_request.components.public_ip
         user = "centos"
@@ -47,6 +51,8 @@ provisioner "remote-exec" {
 
       
 }
+
+  
 }
 
 
