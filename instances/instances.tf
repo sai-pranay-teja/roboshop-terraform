@@ -1,4 +1,15 @@
 
+resource "aws_route53_record" "component-records" {
+    zone_id = var.zone_id
+    name    = "${var.Name}.practise-devops.online"
+    type    = "A"
+    ttl     = 30
+    records = [aws_spot_instance_request.components.public_ip]
+}
+
+
+
+
 
 resource "aws_spot_instance_request" "components" {
     
@@ -36,9 +47,6 @@ provisioner "remote-exec" {
       
 }
 }
-
-
-
 
 
 

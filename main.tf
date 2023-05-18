@@ -10,23 +10,13 @@ module "security-groups" {
   
 }
 
-module "route-53" {
-
-    for_each = var.components
-    source = "./route-53"
-    zone_id = var.zone_id
-    Name=each.value["Name"]
-
-    
-    records=module.instances[each.key].records
-  
-}
 
 module "instances" {
     for_each = var.components
     source = "./instances"
     instance_type=each.value["instance_type"]
     Name=each.value["Name"]
+    zone_id=var.zone_id
     
     security-id=module.security-groups.security-id
   
