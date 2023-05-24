@@ -34,7 +34,7 @@ module "ec2-tags" {
 }
 
 output "public-ip" {
-    value= "${module.instances.Name}-${module.instances.records}"
+    value= "${module.instances[each.key].Name}-${module.instances[each.key].records}"
 
   
 }
