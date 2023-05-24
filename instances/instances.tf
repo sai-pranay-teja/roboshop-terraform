@@ -4,7 +4,7 @@ resource "aws_route53_record" "component-records" {
     name    = "${var.Name}.practise-devops.online"
     type    = "A"
     ttl     = 30
-    records = [aws_spot_instance_request.components.private_ip]
+    records = [aws_instance.components.private_ip]
 }
 
 
@@ -32,7 +32,7 @@ resource "null_resource" "resource-creation" {
     depends_on = [ aws_route53_record.component-records ]
     provisioner "remote-exec" {
     connection {
-        host = aws_spot_instance_request.components.public_ip
+        host = aws_instance.components.public_ip
         user = "centos"
         password = "DevOps321"
     }
