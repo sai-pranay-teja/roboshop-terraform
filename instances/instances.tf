@@ -19,6 +19,7 @@ resource "aws_spot_instance_request" "components" {
     spot_type="persistent"
     instance_interruption_behavior="stop"
     vpc_security_group_ids = [ var.security-id ]
+    availability_zone = "us-east-1b"
 
     tags = {
         Name = var.Name
