@@ -10,11 +10,11 @@ components={
         instance_type="t3.micro"
 
     }
-    mysql={
+    /* mysql={
         Name="mysql"
         instance_type="t3.micro"
 
-    }
+    } */
     rabbitmq={
         Name="rabbitmq"
         instance_type="t3.micro"
