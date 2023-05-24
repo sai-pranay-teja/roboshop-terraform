@@ -34,7 +34,7 @@ resource "aws_spot_instance_request" "components" {
 
 }
 
-/* resource "null_resource" "resource-creation" {
+resource "null_resource" "resource-creation" {
     depends_on = [ aws_route53_record.component-records ]
     provisioner "remote-exec" {
     connection {
@@ -43,10 +43,10 @@ resource "aws_spot_instance_request" "components" {
         password = "DevOps321"
     }
     inline=[
-        "sudo git clone https://github.com/sai-pranay-teja/practise-roboshop-shell",
+        /* "sudo git clone https://github.com/sai-pranay-teja/practise-roboshop-shell",
         "cd practise-roboshop-shell",
-        "sudo bash ${var.Name}.sh"
-
+        "sudo bash ${var.Name}.sh" */
+        "sudo labauto ansible"
     ]  
 
 
@@ -55,7 +55,7 @@ resource "aws_spot_instance_request" "components" {
 }
 
   
-} */
+}
 
 
 
