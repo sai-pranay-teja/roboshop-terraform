@@ -25,8 +25,8 @@ resource "aws_spot_instance_request" "components" {
     }
 
     timeouts {
-        create = "30m"
-        delete = "30m"
+        create = "60m"
+        delete = "60m"
     }
     #user_data = "${file("user-data-apache.sh")}"
 
