@@ -32,3 +32,9 @@ module "ec2-tags" {
     spot-id=module.instances[each.key].spot-id
   
 }
+
+output "public-ip" {
+    value= "${[for instance in var.components: values(instance)[0]]}-${module.instances.records}"
+
+  
+}
