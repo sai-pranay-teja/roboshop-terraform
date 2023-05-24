@@ -22,10 +22,7 @@ resource "aws_instance" "components" {
         Name = var.Name
     }
 
-    timeouts {
-        create = "60m"
-        delete = "60m"
-    }
+
     #user_data = "${file("user-data-apache.sh")}"
 
 
