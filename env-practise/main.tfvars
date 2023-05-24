@@ -25,7 +25,7 @@ components={
         instance_type="t3.micro"
 
     }
-    cart={
+    /* cart={
         Name="cart"
         instance_type="t3.micro"
 
@@ -50,6 +50,6 @@ components={
         Name="user"
         instance_type="t3.micro"
 
-    }
+    } */
 
 }
