@@ -8,5 +8,5 @@ output "spot-id"{
 }
 
 output "Name"{
-    value=aws_spot_instance_request.components.tags[Value]
+    value=aws_spot_instance_request.components.tags[value]
 }
