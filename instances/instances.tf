@@ -15,7 +15,7 @@ resource "aws_instance" "components" {
     
     ami           = "ami-0b5a2b5b8f2be4ec2"
     instance_type = var.instance_type
-    security_groups = [ var.security-id ]
+    vpc_security_group_ids = [ var.security-id ]
     /* availability_zone = "us-east-1b" */
 
     tags = {
