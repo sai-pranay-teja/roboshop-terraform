@@ -11,15 +11,12 @@ resource "aws_route53_record" "component-records" {
 
 
 
-resource "aws_spot_instance_request" "components" {
+resource "aws_instance" "components" {
     
     ami           = "ami-0b5a2b5b8f2be4ec2"
     instance_type = var.instance_type
-    wait_for_fulfillment = true
-    spot_type="persistent"
-    instance_interruption_behavior="stop"
-    vpc_security_group_ids = [ var.security-id ]
-    availability_zone = "us-east-1b"
+    security_groups = [ var.security-id ]
+    /* availability_zone = "us-east-1b" */
 
     tags = {
         Name = var.Name
