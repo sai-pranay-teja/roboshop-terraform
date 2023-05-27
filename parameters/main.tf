@@ -18,5 +18,5 @@ resource "aws_ssm_parameter" "secrets" {
     count = length(var.secrets)
     name  = var.secrets[count.index].Name
     type  = var.secrets[count.index].type
-    value = var.secrers[count.index].Value
+    value = var.secrets[count.index].Value
 }
