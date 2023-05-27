@@ -17,17 +17,17 @@ parameters=[
     {Name="env.catalogue.mongo_url", Value="mongodb://mongodb.practise-devops.online:27017/catalogue", type="String"},
     {Name="env.cart.redis_host", Value="redis.practise-devops.online", type="String"},
     {Name="env.cart.catalogue_host", Value="catalogue.practise-devops.online", type="String"},
-    {Name="env.cart.catalogue_port", Value="8080", type="String"},
+    {Name="env.cart.catalogue_port", Value="8080", type="String"}
 
 
 ]
 
 
 secrets=[
-    {Name="env.mysql.password", Value="RoboShop@1", type="SecureString"}
-    {Name="env.payment.amqp_user", Value="roboshop", type="SecureString"}
-    {Name="env.payment.amqp_pass", Value="roboshop123", type="SecureString"}
-    {Name="env.ssh.user", Value="centos", type="SecureString"}
+    {Name="env.mysql.password", Value="RoboShop@1", type="SecureString"},
+    {Name="env.payment.amqp_user", Value="roboshop", type="SecureString"},
+    {Name="env.payment.amqp_pass", Value="roboshop123", type="SecureString"},
+    {Name="env.ssh.user", Value="centos", type="SecureString"},
     {Name="env.ssh.password", Value="DevOps321", type="SecureString"}
   
 ]
