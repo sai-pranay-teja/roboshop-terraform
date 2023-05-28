@@ -6,6 +6,7 @@ parameters=[
     {Name="env.frontend.payment_url", Value="http://payment.practise-devops.online:8080",type="String"},
     {Name="env.shipping.cart_endpoint", Value="cart.practise-devops.online:8080", type="String"},
     {Name="env.shipping.db_host", Value="mysql.practise-devops.online", type="String"},
+    {Name="env.user.mongo", Value="true", type="String"},
     {Name="env.user.redis_host", Value="redis.practise-devops.online", type="String"},
     {Name="env.user.mongo_url", Value="mongodb://mongodb.practise-devops.online:27017/users", type="String"},
     {Name="env.payment.cart_host", Value="cart.practise-devops.online", type="String"},
@@ -24,10 +25,15 @@ parameters=[
 
 
 secrets=[
+    {Name="env.mysql.host", Value="mysql.practise-devops.online", type="SecureString"},
+    {Name="env.mysql.user", Value="root", type="SecureString"},
     {Name="env.mysql.password", Value="RoboShop@1", type="SecureString"},
     {Name="env.payment.amqp_user", Value="roboshop", type="SecureString"},
     {Name="env.payment.amqp_pass", Value="roboshop123", type="SecureString"},
+    {Name="env.rabbitmq.amqp_user", Value="roboshop", type="SecureString"},
+    {Name="env.rabbitmq.amqp_pass", Value="roboshop123", type="SecureString"},
     {Name="env.ssh.user", Value="centos", type="SecureString"},
-    {Name="env.ssh.password", Value="DevOps321", type="SecureString"}
+    {Name="env.ssh.password", Value="DevOps321", type="SecureString"},
+    {Name="env.mongo.host", Value="mongodb.practise-devops.online", type="SecureString"}
   
 ]
