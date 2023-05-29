@@ -10,6 +10,10 @@ module "security-groups" {
   
 }
 
+module "roles" {
+    source="./roles"
+  
+}
 
 module "instances" {
     for_each = var.components
@@ -17,6 +21,7 @@ module "instances" {
     instance_type=each.value["instance_type"]
     Name=each.value["Name"]
     zone_id=var.zone_id
+    full_access=module.roles.full_access
     
     security-id=module.security-groups.security-id
   

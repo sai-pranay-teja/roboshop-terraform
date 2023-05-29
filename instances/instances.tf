@@ -14,6 +14,8 @@ resource "aws_spot_instance_request" "components" {
   vpc_security_group_ids = [ var.security-id ]
   wait_for_fulfillment="true"
   spot_type="persistent"
+  iam_instance_profile = var.full_access
+
   instance_interruption_behavior="stop"
 
   tags = {
