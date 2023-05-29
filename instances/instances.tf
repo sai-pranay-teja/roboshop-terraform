@@ -37,7 +37,7 @@ resource "aws_instance" "components" {
 
 
 
-resource "null_resource" "resource-creation" {
+/* resource "null_resource" "resource-creation" {
     depends_on = [ aws_route53_record.component-records ]
     provisioner "remote-exec" {
     connection {
@@ -46,9 +46,7 @@ resource "null_resource" "resource-creation" {
         password = "DevOps321"
     }
     inline=[
-        /* "sudo git clone https://github.com/sai-pranay-teja/practise-roboshop-shell",
-        "cd practise-roboshop-shell",
-        "sudo bash ${var.Name}.sh" */
+
         "sudo labauto ansible",
         "sudo ansible-pull -i localhost, -U https://github.com/sai-pranay-teja/roboshop-ansible.git roboshop-app.yml -e component=${var.Name}"
     ]  
@@ -59,7 +57,7 @@ resource "null_resource" "resource-creation" {
 }
 
   
-}
+} */
 
 
 
