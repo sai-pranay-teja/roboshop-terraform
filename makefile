@@ -2,7 +2,7 @@ git:
 	git pull
 
 apply: git
-	terraform init -backend-config env-dev/state.tfvars
+	terraform init
 	terraform apply -var-file=env-practise/main.tfvars -auto-approve
 
 destroy:
