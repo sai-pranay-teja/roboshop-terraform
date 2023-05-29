@@ -19,6 +19,11 @@ resource "aws_spot_request_instance" "components" {
   tags = {
         Name = var.Name
     }
+
+  timeouts {
+    create = "60m"
+    delete = "2h"
+  }
 }
 
 /* resource "aws_instance" "components" {
