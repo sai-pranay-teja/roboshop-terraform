@@ -4,5 +4,5 @@ output "records"{
 
 output "spot-id"{
 
-    value=aws_spot_instance_request.components.id
+    value=aws_spot_instance_request.components.spot_instance_id
 }
