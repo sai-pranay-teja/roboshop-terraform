@@ -4,11 +4,13 @@ git:
 
 s3-apply: git
 	cd /home/pranay/roboshop/roboshop-terraform/s3/
-	make apply
+	terraform init
+	terraform apply -auto-approve
 
 parameters-apply: git
 	cd /home/pranay/roboshop/roboshop-terraform/parameters/
-	make apply
+	terraform init -backend-config env/state.tfvars
+	terraform apply -var-file=env/main.tfvars -auto-approve
 
 apply: git
 	cd /home/pranay/roboshop/roboshop-terraform/
@@ -18,11 +20,11 @@ apply: git
 
 parameters-destroy:
 	cd /home/pranay/roboshop/roboshop-terraform/parameters/
-	make destroy
+	terraform destroy -var-file=env/main.tfvars -auto-approve
 
 destroy: 
 	terraform destroy -var-file=env-practise/main.tfvars -auto-approve
 
 s3-destroy:
 	cd /home/pranay/roboshop/roboshop-terraform/s3/
-	make destroy
+	terraform destroy -auto-approve
