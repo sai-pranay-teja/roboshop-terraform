@@ -37,7 +37,7 @@ module "prometheus-instance" {
   
 }
 
-module "ec2-tags" {
+/* module "ec2-tags" {
     depends_on = [ module.instances ]
     for_each = var.components
     source = "./ec2-tags"
@@ -45,4 +45,4 @@ module "ec2-tags" {
     
     spot-id=module.instances[each.key].spot-id
   
-}
+} */
