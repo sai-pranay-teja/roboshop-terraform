@@ -5,7 +5,7 @@ components={
         instance_type="t3.micro"
 
     }
-    /* mongodb={
+    mongodb={
         Name="mongodb"
         instance_type="t3.micro"
 
@@ -50,11 +50,13 @@ components={
         Name="user"
         instance_type="t3.micro"
 
-    } */
-    prometheus={
-        Name="Prometheus"
-        instance_type="t3.micro"
-
     }
+   
 
 }
+
+prometheus={
+    Name="Prometheus"
+    instance_type="t3.micro"
+
+    }
