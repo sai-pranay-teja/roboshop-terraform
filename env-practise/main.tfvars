@@ -56,7 +56,7 @@ components={
 }
 
 prometheus={
-    Name="Prometheus"
+    Name="prometheus"
     instance_type="t3.micro"
 
     }
