@@ -3,6 +3,7 @@ resource "aws_instance" "components" {
     ami           = data.aws_ami.centos-ami.id
     instance_type = var.instance_type
     vpc_security_group_ids = [ var.security-id ]
+    iam_instance_profile = var.full_access
 
     tags = {
         Name = var.Name
