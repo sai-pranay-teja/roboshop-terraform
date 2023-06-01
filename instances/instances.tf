@@ -50,8 +50,8 @@ resource "null_resource" "resource-creation" {
     provisioner "remote-exec" {
     connection {
         host = aws_instance.components.public_ip
-        user = data.aws_ssm_parameter.username.value
-        password = data.aws_ssm_parameter.password.value
+        user = "centos"
+        password = "DevOps321"
     }
     inline=[
 
