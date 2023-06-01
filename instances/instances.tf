@@ -9,7 +9,7 @@ resource "aws_route53_record" "component-records" {
 
 
 resource "aws_spot_instance_request" "components" {
-  ami           = "ami-0b5a2b5b8f2be4ec2"
+  ami           = data.aws_ami.centos-ami.id
   instance_type = var.instance_type
   vpc_security_group_ids = [ var.security-id ]
   wait_for_fulfillment="true"
