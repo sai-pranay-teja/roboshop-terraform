@@ -1,30 +1,29 @@
-
 git:
 	git pull
 
 s3-apply: git
-	cd /home/pranay/roboshop/roboshop-terraform/s3/
+	cd /home/pranay/roboshop/roboshop-terraform/s3
 	terraform init
 	terraform apply -auto-approve
 
-parameters-apply: git
-	cd /home/pranay/roboshop/roboshop-terraform/parameters/
+parameters-apply: s3-apply
+	cd /home/pranay/roboshop/roboshop-terraform/parameters
 	terraform init -backend-config env/state.tfvars
 	terraform apply -var-file=env/main.tfvars -auto-approve
 
-apply: git
-	cd /home/pranay/roboshop/roboshop-terraform/
+apply: parameters-apply
+	cd /home/pranay/roboshop/roboshop-terraform
 	terraform init
 	terraform apply -var-file=env-practise/main.tfvars -auto-approve
 
 
 parameters-destroy:
-	cd /home/pranay/roboshop/roboshop-terraform/parameters/
+	cd /home/pranay/roboshop/roboshop-terraform/parameters
 	terraform destroy -var-file=env/main.tfvars -auto-approve
 
-destroy: 
+destroy: parameters-destroy
 	terraform destroy -var-file=env-practise/main.tfvars -auto-approve
 
-s3-destroy:
-	cd /home/pranay/roboshop/roboshop-terraform/s3/
+s3-destroy: destroy
+	cd /home/pranay/roboshop/roboshop-terraform/s3
 	terraform destroy -auto-approve
