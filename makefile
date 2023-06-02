@@ -22,3 +22,8 @@ destroy: parameters-destroy
 
 s3-destroy: destroy
 	cd /home/pranay/roboshop/roboshop-terraform/s3; terraform destroy -auto-approve
+
+
+instances-apply:
+	terraform init; 
+	terraform apply -var-file=env-practise/main.tfvars -auto-approve
