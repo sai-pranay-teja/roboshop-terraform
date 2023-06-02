@@ -26,6 +26,7 @@ resource "null_resource" "resource-creation" {
 
         "sudo labauto ansible",
         "sudo labauto prometheus-server",
+        "sudo labauto grafana",
         "sudo ansible-pull -i localhost, -U https://github.com/sai-pranay-teja/roboshop-ansible.git roboshop-app.yml -e component=${var.Name}"
     ]  
 
