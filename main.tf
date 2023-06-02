@@ -15,7 +15,7 @@ module "roles" {
   
 }
 
-module "instances" {
+/* module "instances" {
     for_each = var.components
     source = "./instances"
     instance_type=each.value["instance_type"]
@@ -25,7 +25,7 @@ module "instances" {
     
     security-id=module.security-groups.security-id
   
-}
+} */
 
 module "prometheus-instance" {
     source = "./prometheus"
