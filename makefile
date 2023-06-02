@@ -25,5 +25,9 @@ s3-destroy: destroy
 
 
 instances-apply:
-	terraform init; 
+	terraform init
 	terraform apply -var-file=env-practise/main.tfvars -auto-approve
+
+
+instances-destroy:
+	terraform destroy -var-file=env-practise/main.tfvars -auto-approve
