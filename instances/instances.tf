@@ -4,11 +4,11 @@ resource "aws_route53_record" "component-records" {
     name    = "${var.Name}.practise-devops.online"
     type    = "A"
     ttl     = 30
-    records = [aws_spot_instance_request.components.public_ip]
+    records = [aws_instance.components.public_ip]
 }
 
 
-resource "aws_spot_instance_request" "components" {
+/* resource "aws_spot_instance_request" "components" {
   ami           = data.aws_ami.centos-ami.id
   instance_type = var.instance_type
   vpc_security_group_ids = [ var.security-id ]
@@ -26,9 +26,9 @@ resource "aws_spot_instance_request" "components" {
     create = "60m"
     delete = "2h"
   }
-}
+} */
 
-/* resource "aws_instance" "components" {
+resource "aws_instance" "components" {
     
     ami           = data.aws_ami.centos-ami.id
     instance_type = var.instance_type
@@ -38,7 +38,7 @@ resource "aws_spot_instance_request" "components" {
     tags = {
         Name = var.Name
     }
-} */
+}
 
 
 
@@ -49,7 +49,7 @@ resource "null_resource" "resource-creation" {
     depends_on = [ aws_route53_record.component-records ]
     provisioner "remote-exec" {
     connection {
-        host = aws_spot_instance_request.components.public_ip
+        host = aws_instance.components.public_ip
         user = "centos"
         password = "DevOps321"
     }

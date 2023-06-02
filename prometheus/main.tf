@@ -1,4 +1,4 @@
-/* resource "aws_spot_instance_request" "prometheus" {
+resource "aws_instance" "prometheus" {
     
     ami           = data.aws_ami.centos-ami.id
     instance_type = var.instance_type
@@ -8,11 +8,11 @@
     tags = {
         Name = var.Name
     }
-} */
+}
 
 
 
-resource "aws_spot_instance_request" "prometheus" {
+/* resource "aws_spot_instance_request" "prometheus" {
   ami           = data.aws_ami.centos-ami.id
   instance_type = var.instance_type
   vpc_security_group_ids = [ var.security-id ]
@@ -30,13 +30,13 @@ resource "aws_spot_instance_request" "prometheus" {
     create = "60m"
     delete = "2h"
   }
-}
+} */
 
 
 resource "null_resource" "resource-creation" {
     provisioner "remote-exec" {
     connection {
-        host = aws_spot_instance_request.prometheus.public_ip
+        host = aws_instance.prometheus.public_ip
         user = "centos"
         password = "DevOps321"
     }
