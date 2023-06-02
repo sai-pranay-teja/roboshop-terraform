@@ -18,7 +18,7 @@ parameters-destroy:
 	cd /home/pranay/roboshop/roboshop-terraform/parameters; terraform destroy -var-file=env/main.tfvars -auto-approve
 
 destroy: parameters-destroy
-	cd /home/pranay/roboshop/roboshop-terraform/parameters; terraform destroy -var-file=env-practise/main.tfvars -auto-approve
+	cd /home/pranay/roboshop/roboshop-terraform; terraform destroy -var-file=env-practise/main.tfvars -auto-approve
 
 s3-destroy: destroy
 	cd /home/pranay/roboshop/roboshop-terraform/s3; terraform destroy -auto-approve
