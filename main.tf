@@ -28,6 +28,7 @@ module "instances" {
 }
 
 module "prometheus-instance" {
+    depends_on = [ module.instances ]
     source = "./prometheus"
     instance_type=var.prometheus["instance_type"]
     Name=var.prometheus["Name"]
