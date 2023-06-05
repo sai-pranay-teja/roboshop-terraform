@@ -33,7 +33,7 @@ resource "aws_instance" "prometheus" {
 } */
 
 
-resource "null_resource" "resource-creation" {
+/* resource "null_resource" "resource-creation" {
     provisioner "remote-exec" {
     connection {
         host = aws_instance.prometheus.public_ip
@@ -53,4 +53,4 @@ resource "null_resource" "resource-creation" {
 }
 
   
-}
+} */
