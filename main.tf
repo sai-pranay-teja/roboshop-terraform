@@ -15,7 +15,7 @@ module "roles" {
   
 }
 
-module "instances" {
+/* module "instances" {
     for_each = var.components
     source = "./instances"
     instance_type=each.value["instance_type"]
@@ -25,7 +25,7 @@ module "instances" {
     
     security-id=module.security-groups.security-id
   
-}
+} */
 
 module "prometheus-instance" {
     depends_on = [ module.instances ]
@@ -45,5 +45,16 @@ module "prometheus-instance" {
     Name=each.value["Name"]
     
     spot-id=module.instances[each.key].spot-id
+  
+} */
+
+/* module "elk-instance" {
+    depends_on = [ module.instances ]
+    source = "./elk"
+    instance_type=var.elk["instance_type"]
+    Name=var.elk["Name"]
+    full_access=module.roles.full_access
+    
+    security-id=module.security-groups.security-id
   
 } */
