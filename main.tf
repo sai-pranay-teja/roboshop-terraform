@@ -27,7 +27,7 @@ module "roles" {
   
 } */
 
-module "prometheus-instance" {
+/* module "prometheus-instance" {
     #depends_on = [ module.instances ]
     source = "./prometheus"
     instance_type=var.prometheus["instance_type"]
@@ -36,7 +36,7 @@ module "prometheus-instance" {
     
     security-id=module.security-groups.security-id
   
-}
+} */
 
 /* module "ec2-tags" {
     depends_on = [ module.instances ]
@@ -48,8 +48,8 @@ module "prometheus-instance" {
   
 } */
 
-/* module "elk-instance" {
-    depends_on = [ module.instances ]
+module "elk-instance" {
+    #depends_on = [ module.instances ]
     source = "./elk"
     instance_type=var.elk["instance_type"]
     Name=var.elk["Name"]
@@ -57,4 +57,4 @@ module "prometheus-instance" {
     
     security-id=module.security-groups.security-id
   
-} */
+}
