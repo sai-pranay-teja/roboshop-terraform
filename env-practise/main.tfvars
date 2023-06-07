@@ -4,7 +4,7 @@ components={
         Name="frontend"
         instance_type="t3.micro"
 
-    }
+    /* }
     mongodb={
         Name="mongodb"
         instance_type="t3.micro"
@@ -50,7 +50,7 @@ components={
         Name="user"
         instance_type="t3.micro"
 
-    }
+    } */
    
 
 }
