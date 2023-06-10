@@ -7,13 +7,13 @@ vpc={
 
 
         public={
-            public_az1={
+            public-az1={
                 name="public-az1"
                 cidr="10.0.0.0/28"
                 availability_zone="us-east-1a"
 
             }
-            public_az2={
+            public-az2={
                 name="public-az2"
                 cidr="10.0.0.16/28"
                 availability_zone="us-east-1b"
