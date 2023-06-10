@@ -16,9 +16,9 @@ module "module-vpc" {
     
 }
 
-/* output "vpc"{
+output "nat"{
     value=module.module-vpc
-} */
+}
 
 
 
