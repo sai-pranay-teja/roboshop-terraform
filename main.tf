@@ -16,7 +16,7 @@ module "module-vpc" {
     
 }
 
-output "nat"{
+output "subnet"{
     value=module.module-vpc
 }
 
