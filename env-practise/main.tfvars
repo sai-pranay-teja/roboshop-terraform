@@ -1,5 +1,79 @@
 zone_id="Z02663713JHB580GK666M"
-components={
+env="dev"
+default_vpc_id="vpc-0d18c03eafca9b0f5"
+vpc={
+    main={
+        cidr_block="10.0.0.0/24"
+
+
+        public={
+            public_az1={
+                name="public-az1"
+                cidr="10.0.0.0/28"
+                avaiability_zone="us-east-1a"
+
+            }
+            public_az2={
+                name="public-az2"
+                cidr="10.0.0.16/28"
+                avaiability_zone="us-east-1b"
+
+            }
+            
+        }
+
+        private={
+            web-az1={
+                name="web-az1"
+                cidr="10.0.0.32/28"
+                avaiability_zone="us-east-1a"
+
+            }
+            web-az2={
+                name="web-az2"
+                cidr="10.0.0.48/28"
+                avaiability_zone="us-east-1b"
+
+            }
+            app-az1={
+                name="app-az1"
+                cidr="10.0.0.64/28"
+                avaiability_zone="us-east-1a"
+
+            }
+            app-az2={
+                name="app-az2"
+                cidr="10.0.0.80/28"
+                avaiability_zone="us-east-1b"
+
+            }
+            db-az1={
+                name="db-az1"
+                cidr="10.0.0.96/28"
+                avaiability_zone="us-east-1a"
+
+            }
+            db-az2={
+                name="db-az2"
+                cidr="10.0.0.112/28"
+                avaiability_zone="us-east-1b"
+
+            }
+        }
+    }
+
+
+}
+
+
+
+
+
+
+
+
+
+/* components={
     frontend={
         Name="frontend"
         instance_type="t3.micro"
@@ -64,6 +138,6 @@ prometheus={
 
 elk={
     Name="elk"
-    instance_type="t3.large"
+    instance_type="t3.large" */
 
     }

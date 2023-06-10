@@ -4,18 +4,51 @@ provider "aws" {
 }
 
 
+module "module-vpc" {
+    source = "git::https://github.com/sai-pranay-teja/module-vpc.git"
+    env=var.env
+    default_vpc_id=var.default_vpc_id
+    for_each=var.vpc
+    cidr_block=each.value["cidr_block"]
+    public_cidr=each.value["public"]
+    private_cidr=each.value["private"]
 
-module "security-groups" {
+    
+}
+
+/* output "vpc"{
+    value=module.module-vpc
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* module "security-groups" {
     source = "./security-groups"
   
-}
+} */
 
-module "roles" {
+/* module "roles" {
     source="./roles"
   
-}
+} */
 
-module "instances" {
+/* module "instances" {
     for_each = var.components
     source = "./instances"
     instance_type=each.value["instance_type"]
@@ -27,7 +60,7 @@ module "instances" {
   
 }
 
-/* module "prometheus-instance" {
+module "prometheus-instance" {
     #depends_on = [ module.instances ]
     source = "./prometheus"
     instance_type=var.prometheus["instance_type"]
@@ -36,9 +69,9 @@ module "instances" {
     
     security-id=module.security-groups.security-id
   
-} */
+}
 
-/* module "ec2-tags" {
+module "ec2-tags" {
     depends_on = [ module.instances ]
     for_each = var.components
     source = "./ec2-tags"
@@ -46,7 +79,7 @@ module "instances" {
     
     spot-id=module.instances[each.key].spot-id
   
-} */
+}
 
 module "elk-instance" {
     #depends_on = [ module.instances ]
@@ -57,4 +90,4 @@ module "elk-instance" {
     
     security-id=module.security-groups.security-id
   
-}
+} */
