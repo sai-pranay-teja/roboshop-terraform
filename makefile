@@ -38,6 +38,7 @@ s3-apply: git
 	terraform apply -auto-approve
 
 instances-apply: s3-apply
+	rm -rf .terraform* terraform*
 	terraform init -backend-config env-practise/state.tfvars
 	terraform apply -var-file=env-practise/main.tfvars -auto-approve
 
