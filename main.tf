@@ -9,6 +9,7 @@ module "module-vpc" {
     env=var.env
     default_vpc_id=var.default_vpc_id
     for_each=var.vpc
+    availability_zone=each.value["availability_zone"]
     cidr_block=each.value["cidr_block"]
     public_cidr=each.value["public"]
     private_cidr=each.value["private"]
