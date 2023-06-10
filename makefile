@@ -1,5 +1,5 @@
-# git:
-# 	git pull
+git:
+	git pull
 
 # s3-apply: git
 # 	cd /home/pranay/roboshop/roboshop-terraform/s3; terraform init; \
