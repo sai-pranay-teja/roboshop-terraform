@@ -138,6 +138,7 @@ prometheus={
 
 elk={
     Name="elk"
-    instance_type="t3.large" */
+    instance_type="t3.large" 
 
     }
+*/
