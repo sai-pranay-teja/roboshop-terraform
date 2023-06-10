@@ -10,13 +10,13 @@ vpc={
             public_az1={
                 name="public-az1"
                 cidr="10.0.0.0/28"
-                avaiability_zone="us-east-1a"
+                availability_zone="us-east-1a"
 
             }
             public_az2={
                 name="public-az2"
                 cidr="10.0.0.16/28"
-                avaiability_zone="us-east-1b"
+                availability_zone="us-east-1b"
 
             }
             
@@ -26,37 +26,37 @@ vpc={
             web-az1={
                 name="web-az1"
                 cidr="10.0.0.32/28"
-                avaiability_zone="us-east-1a"
+                availability_zone="us-east-1a"
 
             }
             web-az2={
                 name="web-az2"
                 cidr="10.0.0.48/28"
-                avaiability_zone="us-east-1b"
+                availability_zone="us-east-1b"
 
             }
             app-az1={
                 name="app-az1"
                 cidr="10.0.0.64/28"
-                avaiability_zone="us-east-1a"
+                availability_zone="us-east-1a"
 
             }
             app-az2={
                 name="app-az2"
                 cidr="10.0.0.80/28"
-                avaiability_zone="us-east-1b"
+                availability_zone="us-east-1b"
 
             }
             db-az1={
                 name="db-az1"
                 cidr="10.0.0.96/28"
-                avaiability_zone="us-east-1a"
+                availability_zone="us-east-1a"
 
             }
             db-az2={
                 name="db-az2"
                 cidr="10.0.0.112/28"
-                avaiability_zone="us-east-1b"
+                availability_zone="us-east-1b"
 
             }
         }
