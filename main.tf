@@ -16,9 +16,9 @@ module "module-vpc" {
     
 }
 
-output "subnet"{
+/* output "subnet"{
     value=module.module-vpc
-}
+} */
 
 
 
