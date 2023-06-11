@@ -16,9 +16,25 @@ module "module-vpc" {
     
 }
 
-/* output "subnet"{
-    value=module.module-vpc
+
+/* module "docdb"{
+    source="git::https://github.com/sai-pranay-teja/module-docdb.git"
+    env=var.env
+    for_each=var.docdb
+    engine                  = each.value["engine"]
+    engine_version = each.value["engine_version"]
+    backup_retention_period = each.value["backup_retention_period"]
+    preferred_backup_window = each.value["preferred_backup_window"]
+    skip_final_snapshot = each.value["skip_final_snapshot"]
+    no_of_instances = each.value["no_of_instances"]
+    instance_class = each.value["instance_class"]
+    vpc_id=module.module-vpc["main"].vpc_id
+    allow_subnets=
 } */
+
+output "subnets"{
+    value=module.module-vpc
+}
 
 
 
