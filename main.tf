@@ -20,6 +20,7 @@ module "module-vpc" {
 module "docdb" {
     source="git::https://github.com/sai-pranay-teja/module-docdb.git"
     env=var.env
+    subnet_ids=local.db_subnet_ids
     for_each=var.docdb
     engine = each.value["engine"]
     engine_version = each.value["engine_version"]
@@ -30,7 +31,7 @@ module "docdb" {
     instance_class = each.value["instance_class"]
     vpc_id=module.module-vpc["main"].vpc_id
     allow_subnets=lookup(local.subnet_cidr, each.value["allow_subnets"], null)
-    subnet_ids=local.db_subnet_ids
+    
 }
 
 /* output "subnets"{
