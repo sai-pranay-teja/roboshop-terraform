@@ -17,7 +17,7 @@ module "module-vpc" {
 }
 
 
-/* module "docdb"{
+module "docdb"{
     source="git::https://github.com/sai-pranay-teja/module-docdb.git"
     env=var.env
     for_each=var.docdb
@@ -29,12 +29,13 @@ module "module-vpc" {
     no_of_instances = each.value["no_of_instances"]
     instance_class = each.value["instance_class"]
     vpc_id=module.module-vpc["main"].vpc_id
-    allow_subnets=
-} */
-
-output "subnets"{
-    value=module.module-vpc
+    allow_subnets=lookup(local.subnet_cidr, each.value["allow_subnets"], null)
+    subnet_ids=local.db_subnet_ids
 }
+
+/* output "subnets"{
+    value=module.module-vpc
+} */
 
 
 

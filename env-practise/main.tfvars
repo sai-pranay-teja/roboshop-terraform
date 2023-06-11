@@ -66,7 +66,7 @@ vpc={
 }
 
 
-/* docdb={
+docdb={
     main={
         engine                  = "docdb"
         engine_version = "4.0.0"
@@ -75,13 +75,14 @@ vpc={
         skip_final_snapshot     = true
         no_of_instances=1
         instance_class     = "db.t3.medium"
+        allow_subnets="app"
 
 
     }
 
 
 
-} */
+}
 
 
 
