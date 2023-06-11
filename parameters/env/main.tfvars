@@ -34,7 +34,7 @@ secrets=[
     {Name="env.rabbitmq.amqp_pass", Value="roboshop123", type="SecureString"},
     {Name="env.ssh.user", Value="centos", type="SecureString"},
     {Name="env.ssh.password", Value="DevOps321", type="SecureString"},
-    {Name="env.mongo.host", Value="mongodb.practise-devops.online", type="SecureString"}
-    {Name="env.docdb.user", Value="admin1", type="SecureString"}
+    {Name="env.mongo.host", Value="mongodb.practise-devops.online", type="SecureString"},
+    {Name="env.docdb.user", Value="admin1", type="SecureString"},
     {Name="env.docdb.pass", Value="RoboShop1", type="SecureString"} 
 ]
