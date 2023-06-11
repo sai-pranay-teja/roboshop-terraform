@@ -68,14 +68,14 @@ vpc={
 
 docdb={
     main={
-        engine                  = "docdb"
+        engine = "docdb"
         engine_version = "4.0.0"
         backup_retention_period = 2
         preferred_backup_window = "07:00-09:00"
         skip_final_snapshot     = true
-        no_of_instances=1
+        no_of_instances = 1
         instance_class     = "db.t3.medium"
-        allow_subnets="app"
+        allow_subnets = "app"
 
 
     }
