@@ -32,20 +32,20 @@ s3-apply: git
 	cd /home/pranay/roboshop/roboshop-terraform/s3; terraform init; \
 	terraform apply -auto-approve
 
-parameters-apply: s3-apply
-	cd /home/pranay/roboshop/roboshop-terraform/parameters; terraform init -backend-config env/state.tfvars; \
-	terraform apply -var-file=env/main.tfvars -auto-approve
+# parameters-apply: s3-apply
+# 	cd /home/pranay/roboshop/roboshop-terraform/parameters; terraform init -backend-config env/state.tfvars; \
+# 	terraform apply -var-file=env/main.tfvars -auto-approve
 
 
-instances-apply: parameters-apply
+instances-apply: s3-apply
 	terraform init -backend-config env-practise/state.tfvars
 	terraform apply -var-file=env-practise/main.tfvars -auto-approve
 
-parameters-destroy:
-	cd /home/pranay/roboshop/roboshop-terraform/parameters; terraform destroy -var-file=env/main.tfvars -auto-approve
+# parameters-destroy:
+# 	cd /home/pranay/roboshop/roboshop-terraform/parameters; terraform destroy -var-file=env/main.tfvars -auto-approve
 
 
-instances-destroy: parameters-destroy
+instances-destroy:
 	terraform destroy -var-file=env-practise/main.tfvars -auto-approve
 
 
