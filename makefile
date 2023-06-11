@@ -37,7 +37,8 @@ git:
 # 	terraform apply -var-file=env/main.tfvars -auto-approve
 
 
-instances-apply:
+instances-apply: git
+	rm -rf .terraform* terraform*
 	terraform init -backend-config env-practise/state.tfvars
 	terraform apply -var-file=env-practise/main.tfvars -auto-approve
 
