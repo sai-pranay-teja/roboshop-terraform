@@ -38,7 +38,7 @@ module "module-vpc" {
 
 
 
-/* module "rds" {
+module "rds" {
     depends_on = [ module.module-vpc ]
     source="git::https://github.com/sai-pranay-teja/module-rds.git"
     env=var.env
@@ -55,7 +55,7 @@ module "module-vpc" {
     vpc_id=module.module-vpc["main"].vpc_id
     allow_subnets=lookup(local.subnet_cidr, each.value["allow_subnets"], null)
     
-} */
+}
 
 
 
@@ -77,7 +77,7 @@ module "module-vpc" {
 
 
 
-module "rabbitmq" {
+/* module "rabbitmq" {
     depends_on = [ module.module-vpc ]
     source="git::https://github.com/sai-pranay-teja/module-rabbitmq.git"
     env=var.env
@@ -92,7 +92,7 @@ module "rabbitmq" {
 
 
     
-}
+} */
 
 
 
