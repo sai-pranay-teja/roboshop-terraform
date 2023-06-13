@@ -55,6 +55,7 @@ git:
 # 	cd /home/pranay/roboshop/roboshop-terraform/s3; terraform destroy -auto-approve
 
 instances-apply: git
+	rm -rf .terraform* terraform*
 	terraform init
 	terraform apply -var-file=env-practise/main.tfvars -auto-approve
 
