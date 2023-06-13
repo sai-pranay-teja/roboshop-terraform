@@ -1,11 +1,11 @@
-variable "zone_id" {}
+variable "domain_name" {}
 variable "env" {}
 variable "vpc"{}
 variable "default_vpc_id" {}
 /* variable "docdb"{} */
-/* variable "rds"{} */
+variable "rds"{}
 /* variable "elasticache"{} */
-variable "rabbitmq" {}
+/* variable "rabbitmq" {} */
 
 
 /* variable "components" {}
