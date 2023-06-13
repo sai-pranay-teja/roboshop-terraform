@@ -69,7 +69,7 @@ module "elasticache" {
     engine_version = each.value["engine_version"]
     node_type=each.value["node_type"]
     num_cache_nodes=each.value["num_cache_nodes"]
-    port=each.port["port"]
+    port=each.value["port"]
     vpc_id=module.module-vpc["main"].vpc_id
     allow_subnets=lookup(local.subnet_cidr, each.value["allow_subnets"], null)
     
