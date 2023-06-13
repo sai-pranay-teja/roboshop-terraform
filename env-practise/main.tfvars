@@ -104,7 +104,7 @@ vpc={
 
 } */
 
-elasticache={
+/* elasticache={
     main={
         engine                  = "redis"
         node_type          = "cache.t3.micro"
@@ -118,10 +118,10 @@ elasticache={
 
 
 
-}
+} */
 
 
-/* rabbitmq={
+rabbitmq={
     main={
         instance_type=t3.small
         allow_subnets="app"
@@ -133,7 +133,7 @@ elasticache={
 
 
 
-} */
+}
 
 
 

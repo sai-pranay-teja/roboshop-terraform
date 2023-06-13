@@ -5,8 +5,8 @@ variable "default_vpc_id" {}
 variable "bastion_host" {}
 /* variable "docdb"{} */
 /* variable "rds"{} */
-variable "elasticache"{}
-/* variable "rabbitmq" {} */
+/* variable "elasticache"{} */
+variable "rabbitmq" {}
 
 
 /* variable "components" {}
