@@ -85,7 +85,7 @@ vpc={
 
 } */
 
-/* rds={
+rds={
     main={
         engine                  = "aurora-mysql"
         engine_version          = "5.7.mysql_aurora.2.11.1"
@@ -102,7 +102,7 @@ vpc={
 
 
 
-} */
+}
 
 /* elasticache={
     main={
@@ -121,7 +121,7 @@ vpc={
 } */
 
 
-rabbitmq={
+/* rabbitmq={
     main={
         instance_type=t3.small
         allow_subnets="app"
@@ -133,7 +133,7 @@ rabbitmq={
 
 
 
-}
+} */
 
 
 
