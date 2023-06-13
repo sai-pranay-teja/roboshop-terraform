@@ -38,7 +38,7 @@ module "module-vpc" {
 
 
 
-module "rds" {
+/* module "rds" {
     depends_on = [ module.module-vpc ]
     source="git::https://github.com/sai-pranay-teja/module-rds.git"
     env=var.env
@@ -55,16 +55,16 @@ module "rds" {
     vpc_id=module.module-vpc["main"].vpc_id
     allow_subnets=lookup(local.subnet_cidr, each.value["allow_subnets"], null)
     
-}
+} */
 
 
 
-/* module "rds" {
+/* module "elasticache" {
     depends_on = [ module.module-vpc ]
     source="git::https://github.com/sai-pranay-teja/module-elasticache.git"
     env=var.env
     subnet_ids=local.db_subnet_ids
-    for_each=var.rds
+    for_each=var.elasticache
     engine = each.value["engine"]
     engine_version = each.value["engine_version"]
     node_type=each.value["node_type"]
