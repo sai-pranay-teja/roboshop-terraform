@@ -1,7 +1,7 @@
 domain_name="practise-devops.online"
 env="dev"
 default_vpc_id="vpc-0d18c03eafca9b0f5"
-bastion_host=["49.37.153.135/32"]
+
 vpc={
     main={
         cidr_block="10.0.0.0/24"

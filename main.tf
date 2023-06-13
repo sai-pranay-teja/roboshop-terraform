@@ -77,7 +77,7 @@ module "module-vpc" {
 
 
 
-module "rabbitmq" {
+/* module "rabbitmq" {
     depends_on = [ module.module-vpc ]
     source="git::https://github.com/sai-pranay-teja/module-rabbitmq.git"
     env=var.env
@@ -86,13 +86,13 @@ module "rabbitmq" {
     vpc_id=module.module-vpc["main"].vpc_id
     allow_subnets=lookup(local.subnet_cidr, each.value["allow_subnets"], null)
     domain_name=var.domain_name
+    default_vpc_id=var.default_vpc_id
     instance_type=each.value["instance_type"]
-    bastion_host=var.bastion_host
     component=each.value["component"]
 
 
     
-}
+} */
 
 
 
