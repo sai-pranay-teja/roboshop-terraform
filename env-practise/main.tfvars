@@ -1,6 +1,7 @@
-zone_id="Z02663713JHB580GK666M"
+domain_name="practise-devops.online"
 env="dev"
 default_vpc_id="vpc-0d18c03eafca9b0f5"
+bastion_host=["49.37.153.135/32"]
 vpc={
     main={
         cidr_block="10.0.0.0/24"
@@ -66,7 +67,7 @@ vpc={
 }
 
 
-docdb={
+/* docdb={
     main={
         engine = "docdb"
         engine_version = "4.0.0"
@@ -82,10 +83,57 @@ docdb={
 
 
 
+} */
+
+/* rds={
+    main={
+        engine                  = "aurora-mysql"
+        engine_version          = "5.7.mysql_aurora.2.11.1"
+        database_name = "roboshop-rds"
+        skip_final_snapshot     = true
+        backup_retention_period = 1
+        preferred_backup_window = "07:00-09:00"
+        no_of_instances = 1
+        instance_class     = "db.t3.small"
+        allow_subnets = "app"
+
+
+    }
+
+
+
+} */
+
+/* elasticache={
+    main={
+        engine                  = "redis"
+        node_type          = "cache.t3.micro"
+        num_cache_nodes = 1
+        engine_version = "6.x"
+        port = 6379
+        allow_subnets = "app"
+
+
+    }
+
+
+
+} */
+
+
+rabbitmq={
+    main={
+        instance_type=t3.small
+        allow_subnets="app"
+        component="rabbitmq"
+
+
+
+    }
+
+
+
 }
-
-
-
 
 
 

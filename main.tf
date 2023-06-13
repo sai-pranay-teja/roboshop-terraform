@@ -17,7 +17,7 @@ module "module-vpc" {
 }
 
 
-module "docdb" {
+/* module "docdb" {
     depends_on = [ module.module-vpc ]
     source="git::https://github.com/sai-pranay-teja/module-docdb.git"
     env=var.env
@@ -33,22 +33,66 @@ module "docdb" {
     vpc_id=module.module-vpc["main"].vpc_id
     allow_subnets=lookup(local.subnet_cidr, each.value["allow_subnets"], null)
     
-}
-
-/* output "subnets"{
-    value=module.module-vpc
 } */
 
 
 
 
+/* module "rds" {
+    depends_on = [ module.module-vpc ]
+    source="git::https://github.com/sai-pranay-teja/module-rds.git"
+    env=var.env
+    subnet_ids=local.db_subnet_ids
+    for_each=var.rds
+    engine = each.value["engine"]
+    engine_version = each.value["engine_version"]
+    database_name = each.value["database_name"]
+    backup_retention_period = each.value["backup_retention_period"]
+    preferred_backup_window = each.value["preferred_backup_window"]
+    skip_final_snapshot = each.value["skip_final_snapshot"]
+    no_of_instances = each.value["no_of_instances"]
+    instance_class = each.value["instance_class"]
+    vpc_id=module.module-vpc["main"].vpc_id
+    allow_subnets=lookup(local.subnet_cidr, each.value["allow_subnets"], null)
+    
+} */
 
 
 
+/* module "rds" {
+    depends_on = [ module.module-vpc ]
+    source="git::https://github.com/sai-pranay-teja/module-elasticache.git"
+    env=var.env
+    subnet_ids=local.db_subnet_ids
+    for_each=var.rds
+    engine = each.value["engine"]
+    engine_version = each.value["engine_version"]
+    node_type=each.value["node_type"]
+    num_cache_nodes=each.value["num_cache_nodes"]
+    port=each.port["port"]
+    vpc_id=module.module-vpc["main"].vpc_id
+    allow_subnets=lookup(local.subnet_cidr, each.value["allow_subnets"], null)
+    
+} */
 
 
 
+module "rabbitmq" {
+    depends_on = [ module.module-vpc ]
+    source="git::https://github.com/sai-pranay-teja/module-rabbitmq.git"
+    env=var.env
+    subnet_ids=local.db_subnet_ids
+    for_each=var.rabbitmq
+    vpc_id=module.module-vpc["main"].vpc_id
+    allow_subnets=lookup(local.subnet_cidr, each.value["allow_subnets"], null)
+    domain_name=var.domain_name
+    instance_type=each.value["instance_type"]
+    bastion_host=var.bastion_host
+    component=each.value["component"]
 
+
+    
+}
 
 
 

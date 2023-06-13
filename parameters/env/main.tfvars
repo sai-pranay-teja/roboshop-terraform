@@ -26,8 +26,8 @@ parameters=[
 
 secrets=[
     {Name="env.mysql.host", Value="mysql.practise-devops.online", type="SecureString"},
-    {Name="env.mysql.user", Value="root", type="SecureString"},
-    {Name="env.mysql.password", Value="RoboShop@1", type="SecureString"},
+    {Name="env.rds.user", Value="admin1", type="SecureString"},
+    {Name="env.rds.pass", Value="RoboShop1", type="SecureString"},
     {Name="env.payment.amqp_user", Value="roboshop", type="SecureString"},
     {Name="env.payment.amqp_pass", Value="roboshop123", type="SecureString"},
     {Name="env.rabbitmq.amqp_user", Value="roboshop", type="SecureString"},
