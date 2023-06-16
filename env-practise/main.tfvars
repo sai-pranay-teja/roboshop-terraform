@@ -121,7 +121,7 @@ vpc={
 } */
 
 
-rabbitmq={
+/* rabbitmq={
     main={
         instance_type="t3.small"
         allow_subnets="app"
@@ -133,7 +133,109 @@ rabbitmq={
 
 
 
+} */
+
+lb={
+    public={
+        name="public"
+        internal=false
+        load_balancer_type="application"
+        enable_deletion_protection=false
+        port="80"
+        allow_subnets=["0.0.0.0/0"]
+    }
+    private={
+        name="private"
+        internal=true
+        load_balancer_type="application"
+        enable_deletion_protection=false
+        port="80"
+        allow_subnets=["10.0.0.32/28","10.0.0.48/28","10.0.0.64/28","10.0.0.80/28"]
+    }
+
+
 }
+
+/* app={
+    catalogue={
+        component="catalogue"
+        instance_type="t3.small"
+        port=8080
+        subnets="app"
+        allow_subnets="app"
+        max_size=1
+        min_size=1
+        desired_capacity=1
+        alb="private"
+        priority=10
+        parameters=["docdb"]
+    }
+    cart={
+        component="cart"
+        instance_type="t3.small"
+        port=8080
+        subnets="app"
+        allow_subnets="app"
+        max_size=1
+        min_size=1
+        desired_capacity=1
+        alb="private"
+        priority=11
+        parameters=["elasticache"]
+    }
+    shipping={
+        component="shipping"
+        instance_type="t3.small"
+        port=8080
+        subnets="app"
+        allow_subnets="app"
+        max_size=1
+        min_size=1
+        desired_capacity=1
+        alb="private"
+        priority=12
+        parameters=["rds"]
+    }
+    payment={
+        component="payment"
+        instance_type="t3.small"
+        port=8080
+        subnets="app"
+        allow_subnets="app"
+        max_size=1
+        min_size=1
+        desired_capacity=1
+        alb="private"
+        priority=13
+        parameters=["rabbitmq"]
+    }
+    user={
+        component="user"
+        instance_type="t3.small"
+        port=8080
+        subnets="app"
+        allow_subnets="app"
+        max_size=1
+        min_size=1
+        desired_capacity=1
+        alb="private"
+        priority=14
+        parameters=["docdb","elasticache"]
+    }
+    frontend={
+        component="frontend"
+        instance_type="t3.small"
+        port=80
+        subnets="web"
+        allow_subnets="public"
+        max_size=1
+        min_size=1
+        desired_capacity=1
+        alb="private"
+        priority=15
+        parameters=[]
+    }
+} */
 
 
 

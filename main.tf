@@ -96,6 +96,43 @@ module "module-vpc" {
 
 
 
+module "module-alb" {
+    depends_on=[ module.module-vpc ]
+    source="git::https://github.com/sai-pranay-teja/module-lb.git"
+    env=var.env
+    for_each = var.lb
+    name=each.value["name"]
+    internal=each.value["internal"]
+    load_balancer_type=each.value["load_balancer_type"]
+    subnet_ids=lookup(local.subnet_ids, each.value["subnet_ids"], null)
+    enable_deletion_protection=each.value["enable_deletion_protection"]
+    port=each.value["port"]
+    allow_subnets=each.value["allow_subnets"]
+    vpc_id=module.module-vpc["main"].vpc_id
+
+
+}
+
+/* module "module-app" {
+    #depends_on=[ module.module-vpc, module.module-alb, module.docdb, module.rds, module.elasticache, module.rabbitmq ]
+    depends_on=[ module.module-vpc, module.module-alb ]
+    source="git::https://github.com/sai-pranay-teja/module-app.git"
+    env=var.env
+    for_each = var.app
+    component=each.value["component"]
+    instance_type=each.value["instance_type"]
+    subnet_ids=lookup(local.subnet_ids, each.value["subnet_ids"], null)
+    port=each.value["port"]
+    parameters=each.value["parameters"]
+    allow_subnets=lookup(local.subnet_cidr, each.value["subnet_cidr"], null)
+    priority=each.value["priority"]
+    vpc_id=module.module-vpc["main"].vpc_id
+    alb_dns_name = lookup(lookup(lookup(module.alb, each.value["alb"], null), "alb", null), "dns_name", null)
+    listener_arn = lookup(lookup(lookup(module.alb, each.value["alb"], null), "listener", null), "arn", null)
+
+
+
+} */
 
 
 
