@@ -143,6 +143,7 @@ lb={
         enable_deletion_protection=false
         port="80"
         allow_subnets=["0.0.0.0/0"]
+        subnet_ids="public"
     }
     private={
         name="private"
@@ -151,6 +152,7 @@ lb={
         enable_deletion_protection=false
         port="80"
         allow_subnets=["10.0.0.32/28","10.0.0.48/28","10.0.0.64/28","10.0.0.80/28"]
+        subnet_ids="app"
     }
 
 
