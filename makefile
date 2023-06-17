@@ -39,7 +39,7 @@ parameters-apply: s3-apply
 
 
 dev-apply: git
-	terraform init
+	terraform init -backend-config env-dev/state.tfvars;
 	terraform apply -var-file=env-dev/main.tfvars -auto-approve
 
 
