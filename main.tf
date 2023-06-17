@@ -17,6 +17,8 @@ module "module-vpc" {
 }
 
 
+
+
 /* module "docdb" {
     depends_on = [ module.module-vpc ]
     source="git::https://github.com/sai-pranay-teja/module-docdb.git"
@@ -111,6 +113,11 @@ module "module-alb" {
     vpc_id=module.module-vpc["main"].vpc_id
 
 
+}
+
+output "alb" {
+    value=module.module-alb
+  
 }
 
 /* module "module-app" {
