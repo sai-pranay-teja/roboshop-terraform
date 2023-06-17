@@ -19,7 +19,7 @@ module "module-vpc" {
 
 
 
-module "docdb" {
+/* module "docdb" {
     depends_on = [ module.module-vpc ]
     source="git::https://github.com/sai-pranay-teja/module-docdb.git"
     env=var.env
@@ -35,7 +35,7 @@ module "docdb" {
     vpc_id=module.module-vpc["main"].vpc_id
     allow_subnets=lookup(local.subnet_cidr, each.value["allow_subnets"], null)
     
-}
+} */
 
 
 
@@ -61,7 +61,7 @@ module "docdb" {
 
 
 
-/* module "elasticache" {
+module "elasticache" {
     depends_on = [ module.module-vpc ]
     source="git::https://github.com/sai-pranay-teja/module-elasticache.git"
     env=var.env
@@ -75,8 +75,12 @@ module "docdb" {
     vpc_id=module.module-vpc["main"].vpc_id
     allow_subnets=lookup(local.subnet_cidr, each.value["allow_subnets"], null)
     
-} */
+}
 
+output "endpoint" {
+    value=module.elasticache
+  
+}
 
 
 /* module "rabbitmq" {
