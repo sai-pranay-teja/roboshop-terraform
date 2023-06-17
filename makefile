@@ -22,11 +22,11 @@ git:
 instances-apply: git
 	rm -rf .terraform* terraform*
 	terraform init
-	terraform apply -var-file=env-practise/main.tfvars -auto-approve
+	terraform apply -var-file=env-dev/main.tfvars -auto-approve
 
 
 instances-destroy:
-	terraform destroy -var-file=env-practise/main.tfvars -auto-approve
+	terraform destroy -var-file=env-dev/main.tfvars -auto-approve
 
 
 # s3-apply: git
