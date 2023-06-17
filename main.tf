@@ -136,7 +136,9 @@ output "alb" {
     vpc_id=module.module-vpc["main"].vpc_id
     alb_dns_name = lookup(lookup(lookup(module.alb, each.value["alb"], null), "alb", null), "dns_name", null)
     listener_arn = lookup(lookup(lookup(module.alb, each.value["alb"], null), "listener", null), "arn", null)
-
+    alb_dns_name=lookup(lookup(lookup(module.module-alb, each.value["alb"]),"alb"),"dns_name",null)
+    alb_dns_name=lookup(lookup(lookup(module.module-alb, each.value["alb"]),"alb"),"dns_name",null)
+    listener_arn=lookup(lookup(lookup(lookup(module.module-alb, each.value["alb"]),"alb"),"listener_arn"),"arn",null)
 
 
 } */
