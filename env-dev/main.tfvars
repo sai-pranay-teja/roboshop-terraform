@@ -104,7 +104,7 @@ docdb={
 
 } */
 
-/* elasticache={
+elasticache={
     main={
         engine                  = "redis"
         node_type          = "cache.t3.micro"
@@ -118,7 +118,7 @@ docdb={
 
 
 
-} */
+}
 
 
 /* rabbitmq={
