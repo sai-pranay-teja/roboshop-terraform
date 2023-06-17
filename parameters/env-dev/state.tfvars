@@ -1,3 +1,3 @@
 bucket = "practise-roboshop-terraform"
-key    = "env/infra/terraform.tfstate"
+key    = "params/dev/terraform.tfstate"
 region = "us-east-1"
