@@ -158,7 +158,7 @@ lb={
 
 }
 
-/* app={
+app={
     catalogue={
         component="catalogue"
         instance_type="t3.small"
@@ -233,11 +233,11 @@ lb={
         max_size=1
         min_size=1
         desired_capacity=1
-        alb="private"
+        alb="public"
         priority=15
         parameters=[]
     }
-} */
+}
 
 
 

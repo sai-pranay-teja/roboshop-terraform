@@ -115,10 +115,10 @@ module "module-alb" {
 
 }
 
-output "alb" {
+/* output "alb" {
     value=module.module-alb
   
-}
+} */
 
 module "module-app" {
     #depends_on=[ module.module-vpc, module.module-alb, module.docdb, module.rds, module.elasticache, module.rabbitmq ]
@@ -128,7 +128,7 @@ module "module-app" {
     for_each = var.app
     component=each.value["component"]
     instance_type=each.value["instance_type"]
-    subnet_ids=lookup(local.subnet_ids, each.value["subnet_ids"], null)
+    subnet_ids=lookup(local.subnet_ids, each.value["subnets"], null)
     port=each.value["port"]
     parameters=each.value["parameters"]
     allow_subnets=lookup(local.subnet_cidr, each.value["subnet_cidr"], null)
