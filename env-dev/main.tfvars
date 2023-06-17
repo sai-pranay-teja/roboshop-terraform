@@ -67,7 +67,7 @@ vpc={
 }
 
 
-/* docdb={
+docdb={
     main={
         engine = "docdb"
         engine_version = "4.0.0"
@@ -83,7 +83,7 @@ vpc={
 
 
 
-} */
+}
 
 /* rds={
     main={
@@ -135,7 +135,7 @@ vpc={
 
 } */
 
-lb={
+/* lb={
     public={
         name="public"
         internal=false
@@ -237,7 +237,7 @@ app={
         priority=15
         parameters=[]
     }
-}
+} */
 
 
 
