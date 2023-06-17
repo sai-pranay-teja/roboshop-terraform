@@ -120,7 +120,7 @@ output "alb" {
   
 }
 
-/* module "module-app" {
+module "module-app" {
     #depends_on=[ module.module-vpc, module.module-alb, module.docdb, module.rds, module.elasticache, module.rabbitmq ]
     depends_on=[ module.module-vpc, module.module-alb ]
     source="git::https://github.com/sai-pranay-teja/module-app.git"
@@ -134,14 +134,11 @@ output "alb" {
     allow_subnets=lookup(local.subnet_cidr, each.value["subnet_cidr"], null)
     priority=each.value["priority"]
     vpc_id=module.module-vpc["main"].vpc_id
-    alb_dns_name = lookup(lookup(lookup(module.alb, each.value["alb"], null), "alb", null), "dns_name", null)
-    listener_arn = lookup(lookup(lookup(module.alb, each.value["alb"], null), "listener", null), "arn", null)
-    alb_dns_name=lookup(lookup(lookup(module.module-alb, each.value["alb"]),"alb"),"dns_name",null)
-    alb_dns_name=lookup(lookup(lookup(module.module-alb, each.value["alb"]),"alb"),"dns_name",null)
-    listener_arn=lookup(lookup(lookup(lookup(module.module-alb, each.value["alb"]),"alb"),"listener_arn"),"arn",null)
+    alb_dns_name=lookup(lookup(lookup(module.module-alb, each.value["alb"], null),"alb", null),"dns_name",null)
+    listener_arn=lookup(lookup(lookup(module.module-alb,each.value["alb"], null),"listener_arn",null),"arn",null)
 
 
-} */
+}
 
 
 
