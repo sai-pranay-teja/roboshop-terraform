@@ -104,7 +104,7 @@ vpc={
 
 } */
 
-elasticache={
+/* elasticache={
     main={
         engine                  = "redis"
         node_type          = "cache.t3.micro"
@@ -118,7 +118,7 @@ elasticache={
 
 
 
-}
+} */
 
 
 /* rabbitmq={
@@ -135,7 +135,7 @@ elasticache={
 
 } */
 
-/* lb={
+lb={
     public={
         name="public"
         internal=false
@@ -237,7 +237,7 @@ app={
         priority=15
         parameters=[]
     }
-} */
+}
 
 
 
