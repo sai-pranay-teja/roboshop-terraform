@@ -25,7 +25,7 @@ parameters=[
 
 
 secrets=[
-    {Name="dev.mysql.host", Value="mysql.practise-devops.online", type="SecureString"},
+    {Name="dev.mysql.password", Value="RoboShop@1", type="SecureString"},
     {Name="dev.rds.user", Value="admin1", type="SecureString"},
     {Name="dev.rds.pass", Value="RoboShop1", type="SecureString"},
     {Name="dev.payment.amqp_user", Value="roboshop", type="SecureString"},
