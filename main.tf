@@ -142,6 +142,10 @@ module "module-app" {
     listener_arn=lookup(lookup(lookup(module.module-alb,each.value["alb"], null),"listener_arn",null),"arn",null)
     domain_name=var.domain_name
     default_vpc_id=var.default_vpc_id
+    max_size=each.value["max_size"]
+    min_size=each.value["min_size"]
+    desired_capacity=each.value["desired_capacity"]
+
 
 
 }
