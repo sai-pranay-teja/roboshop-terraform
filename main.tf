@@ -135,7 +135,7 @@ module "module-app" {
     subnet_ids=lookup(local.subnet_ids, each.value["subnets"], null)
     port=each.value["port"]
     parameters=each.value["parameters"]
-    allow_subnets=lookup(local.subnet_cidr, each.value["subnet_cidr"], null)
+    allow_subnets=lookup(local.subnet_cidr, each.value["allow_subnets"], null)
     priority=each.value["priority"]
     vpc_id=module.module-vpc["main"].vpc_id
     alb_dns_name=lookup(lookup(lookup(module.module-alb, each.value["alb"], null),"alb", null),"dns_name",null)
