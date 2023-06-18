@@ -61,7 +61,7 @@ module "module-vpc" {
 
 
 
-module "elasticache" {
+/* module "elasticache" {
     depends_on = [ module.module-vpc ]
     source="git::https://github.com/sai-pranay-teja/module-elasticache.git"
     env=var.env
@@ -75,12 +75,12 @@ module "elasticache" {
     vpc_id=module.module-vpc["main"].vpc_id
     allow_subnets=lookup(local.subnet_cidr, each.value["allow_subnets"], null)
     
-}
+} */
 
-output "endpoint" {
+/* output "endpoint" {
     value=module.elasticache
   
-}
+} */
 
 
 /* module "rabbitmq" {
@@ -102,7 +102,7 @@ output "endpoint" {
 
 
 
-/* module "module-alb" {
+module "module-alb" {
     depends_on=[ module.module-vpc ]
     source="git::https://github.com/sai-pranay-teja/module-lb.git"
     env=var.env
@@ -117,14 +117,14 @@ output "endpoint" {
     vpc_id=module.module-vpc["main"].vpc_id
 
 
-} */
+}
 
 /* output "alb" {
     value=module.module-alb
   
 } */
 
-/* module "module-app" {
+module "module-app" {
     #depends_on=[ module.module-vpc, module.module-alb, module.docdb, module.rds, module.elasticache, module.rabbitmq ]
     depends_on=[ module.module-vpc, module.module-alb ]
     source="git::https://github.com/sai-pranay-teja/module-app.git"
@@ -142,7 +142,7 @@ output "endpoint" {
     listener_arn=lookup(lookup(lookup(module.module-alb,each.value["alb"], null),"listener_arn",null),"arn",null)
 
 
-} */
+}
 
 
 
