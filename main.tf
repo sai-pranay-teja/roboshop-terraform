@@ -140,6 +140,8 @@ module "module-app" {
     vpc_id=module.module-vpc["main"].vpc_id
     alb_dns_name=lookup(lookup(lookup(module.module-alb, each.value["alb"], null),"alb", null),"dns_name",null)
     listener_arn=lookup(lookup(lookup(module.module-alb,each.value["alb"], null),"listener_arn",null),"arn",null)
+    domain_name=var.domain_name
+    defeault_vpc_id=var.default_vpc_id
 
 
 }
