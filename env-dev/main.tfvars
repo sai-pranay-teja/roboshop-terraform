@@ -135,7 +135,7 @@ vpc={
 
 } */
 
-lb={
+/* lb={
     public={
         name="public"
         internal=false
@@ -237,7 +237,7 @@ app={
         priority=15
         parameters=[]
     }
-}
+} */
 
 
 
