@@ -7,8 +7,8 @@ variable "default_vpc_id" {}
 /* variable "rds"{} */
 /* variable "elasticache"{} */
 /* variable "rabbitmq" {} */
-variable "lb" {}
-variable "app" {}
+/* variable "lb" {}
+variable "app" {} */
 
 /* variable "components" {}
 variable "prometheus" {}
