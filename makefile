@@ -48,7 +48,7 @@ instances-destroy:
 	terraform destroy -var-file=env-dev/main.tfvars -auto-approve
 
 
-parameters-destroy: instances-apply
+parameters-destroy: instances-destroy
 	cd /home/pranay/roboshop/roboshop-terraform/parameters; terraform destroy -var-file=env-dev/main.tfvars -auto-approve
 
 dev-destroy: instances-destroy
