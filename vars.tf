@@ -4,11 +4,11 @@ variable "vpc"{}
 variable "default_vpc_id" {}
 
 variable "docdb"{}
-variable "rds"{}
+/* variable "rds"{}
 variable "elasticache"{}
 variable "rabbitmq" {}
 variable "lb" {}
-variable "app" {}
+variable "app" {} */
 
 /* variable "components" {}
 variable "prometheus" {}
