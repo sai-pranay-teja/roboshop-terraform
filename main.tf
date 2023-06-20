@@ -40,7 +40,7 @@ module "docdb" {
 
 
 
-/* module "rds" {
+module "rds" {
     depends_on = [ module.module-vpc ]
     source="git::https://github.com/sai-pranay-teja/module-rds.git"
     env=var.env
@@ -141,7 +141,7 @@ module "module-app" {
 
 
 
-} */
+}
 
 
 
