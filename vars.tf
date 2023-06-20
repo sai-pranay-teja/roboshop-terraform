@@ -3,10 +3,10 @@ variable "env" {}
 variable "vpc"{}
 variable "default_vpc_id" {}
 
-/* variable "docdb"{}
+variable "docdb"{}
 variable "rds"{}
 variable "elasticache"{}
-variable "rabbitmq" {} */
+variable "rabbitmq" {}
 variable "lb" {}
 variable "app" {}
 
