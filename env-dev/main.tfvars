@@ -67,7 +67,7 @@ vpc={
 }
 
 
-/* docdb={
+docdb={
     main={
         engine = "docdb"
         engine_version = "4.0.0"
@@ -83,9 +83,9 @@ vpc={
 
 
 
-} */
+}
 
-/* rds={
+rds={
     main={
         engine                  = "aurora-mysql"
         engine_version          = "5.7.mysql_aurora.2.11.1"
@@ -102,9 +102,9 @@ vpc={
 
 
 
-} */
+}
 
-/* elasticache={
+elasticache={
     main={
         engine                  = "redis"
         node_type          = "cache.t3.micro"
@@ -118,10 +118,10 @@ vpc={
 
 
 
-} */
+}
 
 
-/* rabbitmq={
+rabbitmq={
     main={
         instance_type="t3.small"
         allow_subnets="app"
@@ -133,9 +133,9 @@ vpc={
 
 
 
-} */
+}
 
-/* lb={
+lb={
     public={
         name="public"
         internal=false
@@ -237,7 +237,7 @@ app={
         priority=15
         parameters=[]
     }
-} */
+}
 
 
 
