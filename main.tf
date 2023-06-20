@@ -19,7 +19,7 @@ module "module-vpc" {
 
 
 
-/* module "docdb" {
+module "docdb" {
     depends_on = [ module.module-vpc ]
     source="git::https://github.com/sai-pranay-teja/module-docdb.git"
     env=var.env
@@ -35,12 +35,12 @@ module "module-vpc" {
     vpc_id=module.module-vpc["main"].vpc_id
     allow_subnets=lookup(local.subnet_cidr, each.value["allow_subnets"], null)
     
-} */
+}
 
 
 
 
-/* module "rds" {
+module "rds" {
     depends_on = [ module.module-vpc ]
     source="git::https://github.com/sai-pranay-teja/module-rds.git"
     env=var.env
@@ -57,11 +57,11 @@ module "module-vpc" {
     vpc_id=module.module-vpc["main"].vpc_id
     allow_subnets=lookup(local.subnet_cidr, each.value["allow_subnets"], null)
     
-} */
+}
 
 
 
-/* module "elasticache" {
+module "elasticache" {
     depends_on = [ module.module-vpc ]
     source="git::https://github.com/sai-pranay-teja/module-elasticache.git"
     env=var.env
@@ -75,7 +75,7 @@ module "module-vpc" {
     vpc_id=module.module-vpc["main"].vpc_id
     allow_subnets=lookup(local.subnet_cidr, each.value["allow_subnets"], null)
     
-} */
+}
 
 /* output "endpoint" {
     value=module.elasticache
@@ -83,7 +83,7 @@ module "module-vpc" {
 } */
 
 
-/* module "rabbitmq" {
+module "rabbitmq" {
     depends_on = [ module.module-vpc ]
     source="git::https://github.com/sai-pranay-teja/module-rabbitmq.git"
     env=var.env
@@ -98,11 +98,11 @@ module "module-vpc" {
 
 
     
-} */
+}
 
 
 
-/* module "module-alb" {
+module "module-alb" {
     depends_on=[ module.module-vpc ]
     source="git::https://github.com/sai-pranay-teja/module-lb.git"
     env=var.env
@@ -117,14 +117,14 @@ module "module-vpc" {
     vpc_id=module.module-vpc["main"].vpc_id
 
 
-} */
+}
 
 /* output "alb" {
     value=module.module-alb
   
 } */
 
-/* module "module-app" {
+module "module-app" {
     #depends_on=[ module.module-vpc, module.module-alb, module.docdb, module.rds, module.elasticache, module.rabbitmq ]
     depends_on=[ module.module-vpc, module.module-alb ]
     source="git::https://github.com/sai-pranay-teja/module-app.git"
@@ -149,7 +149,7 @@ module "module-vpc" {
 
 
 
-} */
+}
 
 
 
