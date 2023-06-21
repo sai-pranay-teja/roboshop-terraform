@@ -13,7 +13,7 @@ parameters=[
     {Name="dev.payment.cart_port", Value="80", type="String"},
     {Name="dev.payment.user_host", Value="dev-user.practise-devops.online", type="String"},
     {Name="dev.payment.user_port", Value="80", type="String"},
-    {Name="dev.payment.amqp_host", Value="rabbitmq.practise-devops.online", type="String"},    
+    {Name="dev.payment.amqp_host", Value="dev-rabbitmq.practise-devops.online", type="String"},    
     {Name="dev.catalogue.mongo", Value="true", type="String"},
     {Name="dev.catalogue.mongo_url", Value="mongodb://mongodb.practise-devops.online:27017/catalogue", type="String"},
     {Name="dev.cart.redis_host", Value="redis.practise-devops.online", type="String"},
