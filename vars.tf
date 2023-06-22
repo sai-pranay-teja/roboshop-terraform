@@ -10,7 +10,8 @@ variable "rabbitmq" {}
 variable "lb" {}
 variable "app" {}
 variable "prometheus"{}
+variable "elk" {}
 
 /* variable "components" {}
-variable "prometheus" {}
-variable "elk" {} */
+
+ */
