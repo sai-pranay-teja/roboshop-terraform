@@ -18,7 +18,7 @@ db_subnet_ids=tolist([module.module-vpc["main"].private_subnets["db-az1"].id, mo
 app_subnet_ids=tolist([module.module-vpc["main"].private_subnets["app-az1"].id, module.module-vpc["main"].private_subnets["app-az2"].id])
 web_subnet_ids=tolist([module.module-vpc["main"].private_subnets["web-az1"].id, module.module-vpc["main"].private_subnets["web-az2"].id])
 
-default_subnet_ids=tolist([module.module-vpc.default_subnets.id])
+default_subnet_ids=tolist([module.module-vpc["main"].default_subnets.id])
 
 
 }
