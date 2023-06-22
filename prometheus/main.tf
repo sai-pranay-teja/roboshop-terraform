@@ -26,13 +26,12 @@ resource "aws_spot_instance_request" "prometheus" {
 
 resource "null_resource" "resource-creation" {
     provisioner "remote-exec" {
-        connection {
-            host = aws_spot_instance_request.prometheus.public_ip
-            user = data.aws_ssm_parameter.user.value
-            password = data.aws_ssm_parameter.pass.value
+    connection {
+      host = aws_spot_instance_request.prometheus.public_ip
+      user = data.aws_ssm_parameter.user.value
+      password = data.aws_ssm_parameter.pass.value
     }
     inline=[
-
         "sudo labauto ansible",
         "sudo labauto prometheus-server",
         "sudo ansible-pull -i localhost, -U https://github.com/sai-pranay-teja/roboshop-ansible.git roboshop-app.yml -e components=${var.Name}"
