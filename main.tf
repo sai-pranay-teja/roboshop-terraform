@@ -150,7 +150,7 @@ module "prometheus-instance" {
     instance_type=var.prometheus["instance_type"]
     Name=var.prometheus["Name"]
     env=var.env
-    default_subnets=module.module-vpc["main"].default_subnets
+    default_public_subnets=module.module-vpc["main"].default_public_subnets
   
 }
 
@@ -161,7 +161,7 @@ module "elk-instance" {
     instance_type=var.elk["instance_type"]
     Name=var.elk["Name"]
     env=var.env
-    default_subnets=module.module-vpc["main"].default_subnets
+    default_public_subnets=module.module-vpc["main"].default_public_subnets
   
 }
 

@@ -19,7 +19,7 @@ resource "aws_spot_instance_request" "elk" {
   wait_for_fulfillment="true"
   spot_type="persistent"
   iam_instance_profile = aws_iam_instance_profile.access-profile.name
-  subnet_id = var.default_subnets
+  subnet_id = var.default_public_subnets
   instance_interruption_behavior="stop"
 
   tags = {
