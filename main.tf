@@ -154,7 +154,13 @@ module "prometheus-instance" {
 }
 
 
-
+module "elk-instance" {
+    depends_on = [ module.module-app ]
+    source = "./elk"
+    instance_type=var.elk["instance_type"]
+    Name=var.elk["Name"]
+  
+}
 
 
 /* module "security-groups" {
@@ -167,7 +173,7 @@ module "prometheus-instance" {
   
 } */
 
-/* module "instances" {
+ /* module "instances" {
     for_each = var.components
     source = "./instances"
     instance_type=each.value["instance_type"]
@@ -188,16 +194,5 @@ module "ec2-tags" {
     Name=each.value["Name"]
     
     spot-id=module.instances[each.key].spot-id
-  
-}
-
-module "elk-instance" {
-    #depends_on = [ module.instances ]
-    source = "./elk"
-    instance_type=var.elk["instance_type"]
-    Name=var.elk["Name"]
-    full_access=module.roles.full_access
-    
-    security-id=module.security-groups.security-id
   
 } */

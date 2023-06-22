@@ -1,4 +1,4 @@
-resource "aws_instance" "elk" {
+/* resource "aws_instance" "elk" {
     
     ami           = data.aws_ami.centos-ami.id
     instance_type = var.instance_type
@@ -8,17 +8,17 @@ resource "aws_instance" "elk" {
     tags = {
         Name = var.Name
     }
-}
+} */
 
 
 
-/* resource "aws_spot_instance_request" "prometheus" {
+resource "aws_spot_instance_request" "elk" {
   ami           = data.aws_ami.centos-ami.id
   instance_type = var.instance_type
-  vpc_security_group_ids = [ var.security-id ]
+  vpc_security_group_ids = [ aws_security_group.all_traffic.id ]
   wait_for_fulfillment="true"
   spot_type="persistent"
-  iam_instance_profile = var.full_access
+  iam_instance_profile = aws_iam_instance_profile.access-profile.name
 
   instance_interruption_behavior="stop"
 
@@ -30,7 +30,7 @@ resource "aws_instance" "elk" {
     create = "60m"
     delete = "2h"
   }
-} */
+}
 
 
 resource "null_resource" "resource-creation" {
