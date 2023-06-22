@@ -10,7 +10,7 @@ resource "aws_spot_instance_request" "prometheus" {
   spot_type="persistent"
   subnet_id = var.default_public_subnets
   iam_instance_profile = aws_iam_instance_profile.access-profile.name
-
+  associate_public_ip_address = true
   instance_interruption_behavior="stop"
   user_data = base64encode(templatefile("${path.module}/userdata.sh" , {
     Name=var.Name
@@ -28,7 +28,11 @@ resource "aws_spot_instance_request" "prometheus" {
   }
 } 
 
-
+resource "aws_ec2_tag" "component-tags" {
+    resource_id = aws_spot_instance_request.prometheus.spot_instance_id
+    key         = "Name"
+    value       = "${var.env}-prometheus"
+}
 /* resource "null_resource" "resource-creation" {
   depends_on = [ aws_spot_instance_request.prometheus ]
     provisioner "remote-exec" {

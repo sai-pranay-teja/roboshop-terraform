@@ -20,6 +20,7 @@ resource "aws_spot_instance_request" "elk" {
   spot_type="persistent"
   iam_instance_profile = aws_iam_instance_profile.access-profile.name
   subnet_id = var.default_public_subnets
+  associate_public_ip_address = true
   instance_interruption_behavior="stop"
   user_data = base64encode(templatefile("${path.module}/userdata.sh" , {
     Name=var.Name
@@ -34,6 +35,12 @@ resource "aws_spot_instance_request" "elk" {
     create = "60m"
     delete = "2h"
   }
+}
+
+resource "aws_ec2_tag" "component-tags" {
+    resource_id = aws_spot_instance_request.elk.spot_instance_id
+    key         = "Name"
+    value       = "${var.env}-elk"
 }
 
 
