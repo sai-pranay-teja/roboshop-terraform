@@ -16,11 +16,9 @@ module "module-vpc" {
     
 }
 
-output "default"{
-    value=module.module-vpc["main"].default_public_subnets
-}
 
-/* 
+
+
 
 module "docdb" {
     depends_on = [ module.module-vpc ]
@@ -149,26 +147,27 @@ module "module-app" {
 
 module "prometheus-instance" {
     depends_on = [ module.module-app ]
-    for_each=var.vpc
+    for_each=var.prometheus
     source = "./prometheus"
-    instance_type=var.prometheus["instance_type"]
-    Name=var.prometheus["Name"]
+    instance_type=each.value["instance_type"]
+    Name=each.value["Name"]
     env=var.env
     default_public_subnets=module.module-vpc["main"].default_public_subnets
+    
   
 }
 
 
 module "elk-instance" {
     depends_on = [ module.module-app ]
-    for_each=var.vpc
+    for_each=var.elk
     source = "./elk"
-    instance_type=var.elk["instance_type"]
-    Name=var.elk["Name"]
+    instance_type=each.value["instance_type"]
+    Name=each.value["Name"]
     env=var.env
     default_public_subnets=module.module-vpc["main"].default_public_subnets
   
-} */
+}
 
 
 /* module "security-groups" {

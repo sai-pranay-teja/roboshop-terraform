@@ -240,14 +240,20 @@ app={
 }
 
 prometheus={
-    Name="prometheus"
-    instance_type="t3.micro"
+    main={
+        Name="prometheus"
+        instance_type="t3.micro"
+
+    }
+
 
 }
 
 elk={
-    Name="elk"
-    instance_type="t3.large" 
+    main={
+        Name="elk"
+        instance_type="t3.large" 
+    }
 
 }
 
