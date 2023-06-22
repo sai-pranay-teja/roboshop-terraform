@@ -35,10 +35,10 @@ resource "aws_spot_instance_request" "elk" {
 
 resource "null_resource" "resource-creation" {
     provisioner "remote-exec" {
-    connection {
-        host = aws_instance.elk.public_ip
-        user = "centos"
-        password = "DevOps321"
+       connection {
+            host = aws_spot_instance_request.elk.public_ip
+            user = data.aws_ssm_parameter.user.value
+            password = data.aws_ssm_parameter.pass.value
     }
     inline=[
 
