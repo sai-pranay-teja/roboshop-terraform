@@ -159,6 +159,7 @@ module "elk-instance" {
     source = "./elk"
     instance_type=var.elk["instance_type"]
     Name=var.elk["Name"]
+    env=var.env
   
 }
 
