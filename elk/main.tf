@@ -21,11 +21,11 @@ resource "aws_spot_instance_request" "elk" {
   iam_instance_profile = aws_iam_instance_profile.access-profile.name
   subnet_id = var.default_public_subnets
   instance_interruption_behavior="stop"
-  /* user_data = base64encode(templatefile("${path.module}/userdata.sh" , {
+  user_data = base64encode(templatefile("${path.module}/userdata.sh" , {
     Name=var.Name
 
 
-  })) */
+  }))
   tags = {
         Name = var.Name
     }
@@ -37,7 +37,7 @@ resource "aws_spot_instance_request" "elk" {
 }
 
 
-resource "null_resource" "resource-creation" {
+/* resource "null_resource" "resource-creation" {
   depends_on = [ aws_spot_instance_request.elk ]
   provisioner "remote-exec" {
     connection {
@@ -58,4 +58,4 @@ resource "null_resource" "resource-creation" {
 }
 
   
-}
+} */
