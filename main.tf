@@ -16,8 +16,11 @@ module "module-vpc" {
     
 }
 
+output "default"{
+    value=module.module-vpc["main"].default_public_subnets
+}
 
-
+/* 
 
 module "docdb" {
     depends_on = [ module.module-vpc ]
@@ -165,7 +168,7 @@ module "elk-instance" {
     env=var.env
     default_public_subnets=module.module-vpc["main"].default_public_subnets
   
-}
+} */
 
 
 /* module "security-groups" {
