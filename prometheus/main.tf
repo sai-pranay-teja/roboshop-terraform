@@ -8,6 +8,7 @@ resource "aws_spot_instance_request" "prometheus" {
   vpc_security_group_ids = [ aws_security_group.all_traffic.id ]
   wait_for_fulfillment="true"
   spot_type="persistent"
+  subnet_id = var.default_subnet_ids
   iam_instance_profile = aws_iam_instance_profile.access-profile.name
 
   instance_interruption_behavior="stop"
