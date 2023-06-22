@@ -145,10 +145,11 @@ module "module-app" {
 
 
 module "prometheus-instance" {
-    #depends_on = [ module.instances ]
+    depends_on = [ module.module-app ]
     source = "./prometheus"
     instance_type=var.prometheus["instance_type"]
     Name=var.prometheus["Name"]
+    env=var.env
   
 }
 
