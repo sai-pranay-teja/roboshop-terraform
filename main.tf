@@ -150,7 +150,7 @@ module "prometheus-instance" {
     instance_type=var.prometheus["instance_type"]
     Name=var.prometheus["Name"]
     env=var.env
-    default_subnets=local.default_subnet_ids
+    default_subnets=module.module-vpc["main"].default_subnets
   
 }
 
