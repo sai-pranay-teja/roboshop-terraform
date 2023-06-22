@@ -17,7 +17,7 @@ module "module-vpc" {
 }
 
 output "default"{
-    value=lookup(module.module-vpc["main"].default_public_subnets,"id",null)
+    value=module.module-vpc["main"].default_public_subnets
 }
 
 /* 
