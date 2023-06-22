@@ -9,6 +9,7 @@ variable "elasticache"{}
 variable "rabbitmq" {}
 variable "lb" {}
 variable "app" {}
+variable "prometheus"{}
 
 /* variable "components" {}
 variable "prometheus" {}
