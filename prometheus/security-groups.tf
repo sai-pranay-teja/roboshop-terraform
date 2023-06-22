@@ -1,5 +1,5 @@
 resource "aws_security_group" "all_traffic" {
-  name        = "allow_all_for_components"
+  name        = "${var.env}-allow_all_for_components-for-monitoring"
   description = "Allow all inbound traffic"
 
 

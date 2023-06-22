@@ -20,7 +20,7 @@ module "module-vpc" {
 
 
 
-module "docdb" {
+/* module "docdb" {
     depends_on = [ module.module-vpc ]
     source="git::https://github.com/sai-pranay-teja/module-docdb.git"
     env=var.env
@@ -142,11 +142,11 @@ module "module-app" {
 
 
 
-}
+} */
 
 
 module "prometheus-instance" {
-    depends_on = [ module.module-app ]
+    depends_on = [ module.module-vpc ]
     for_each=var.prometheus
     source = "./prometheus"
     instance_type=each.value["instance_type"]
@@ -159,7 +159,7 @@ module "prometheus-instance" {
 
 
 module "elk-instance" {
-    depends_on = [ module.module-app ]
+    depends_on = [ module.module-vpc ]
     for_each=var.elk
     source = "./elk"
     instance_type=each.value["instance_type"]

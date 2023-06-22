@@ -67,7 +67,7 @@ vpc={
 }
 
 
-docdb={
+/* docdb={
     main={
         engine = "docdb"
         engine_version = "4.0.0"
@@ -237,7 +237,7 @@ app={
         priority=15
         parameters=[]
     }
-}
+} */
 
 prometheus={
     main={
