@@ -161,7 +161,7 @@ module "elk-instance" {
     instance_type=var.elk["instance_type"]
     Name=var.elk["Name"]
     env=var.env
-    default_subnets=local.default_subnet_ids
+    default_subnets=module.module-vpc["main"].default_subnets
   
 }
 
