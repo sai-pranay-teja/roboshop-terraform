@@ -1,18 +1,18 @@
 resource "aws_iam_instance_profile" "access-profile" {
-  name = "${var.env}-monitor-profile"
+  name = "${var.env}-log-profile"
   role = aws_iam_role.access-role.name
 }
 
 
 resource "aws_iam_policy_attachment" "access-attachment" {
-  name       = "${var.env}-monitor-attachment"
+  name       = "${var.env}-log-attachment"
   roles      = [aws_iam_role.access-role.name]
   policy_arn = aws_iam_policy.access-policy.arn
 }
 
 
 resource "aws_iam_role" "access-role" {
-  name = "${var.env}-monitor-role"
+  name = "${var.env}-log-role"
 
   assume_role_policy = jsonencode({
     Version = "2012-10-17"
@@ -29,7 +29,7 @@ resource "aws_iam_role" "access-role" {
 }
 
 resource "aws_iam_policy" "access-policy" {
-  name        = "${var.env}-policy-monitor"
+  name        = "${var.env}-policy-log"
   path = "/"
   policy = jsonencode({
     
