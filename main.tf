@@ -146,6 +146,7 @@ module "module-app" {
 
 module "prometheus-instance" {
     depends_on = [ module.module-app ]
+    for_each=var.vpc
     source = "./prometheus"
     instance_type=var.prometheus["instance_type"]
     Name=var.prometheus["Name"]
@@ -157,6 +158,7 @@ module "prometheus-instance" {
 
 module "elk-instance" {
     depends_on = [ module.module-app ]
+    for_each=var.vpc
     source = "./elk"
     instance_type=var.elk["instance_type"]
     Name=var.elk["Name"]
