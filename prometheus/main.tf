@@ -12,6 +12,11 @@ resource "aws_spot_instance_request" "prometheus" {
   iam_instance_profile = aws_iam_instance_profile.access-profile.name
 
   instance_interruption_behavior="stop"
+  /* user_data = base64encode(templatefile("${path.module}/userdata.sh" , {
+    Name=var.Name
+
+
+  })) */
 
   tags = {
         Name = var.Name
@@ -25,6 +30,7 @@ resource "aws_spot_instance_request" "prometheus" {
 
 
 resource "null_resource" "resource-creation" {
+  depends_on = [ aws_spot_instance_request.prometheus ]
     provisioner "remote-exec" {
     connection {
       host = aws_spot_instance_request.prometheus.public_ip
