@@ -144,6 +144,15 @@ module "module-app" {
 }
 
 
+module "prometheus-instance" {
+    #depends_on = [ module.instances ]
+    source = "./prometheus"
+    instance_type=var.prometheus["instance_type"]
+    Name=var.prometheus["Name"]
+  
+}
+
+
 
 
 
@@ -169,16 +178,7 @@ module "module-app" {
   
 }
 
-module "prometheus-instance" {
-    #depends_on = [ module.instances ]
-    source = "./prometheus"
-    instance_type=var.prometheus["instance_type"]
-    Name=var.prometheus["Name"]
-    full_access=module.roles.full_access
-    
-    security-id=module.security-groups.security-id
-  
-}
+
 
 module "ec2-tags" {
     depends_on = [ module.instances ]

@@ -33,7 +33,7 @@ secrets=[
     {Name="dev.rabbitmq.amqp_user", Value="roboshop", type="SecureString"},
     {Name="dev.rabbitmq.amqp_pass", Value="roboshop123", type="SecureString"},
     {Name="dev.ssh.user", Value="centos", type="SecureString"},
-    {Name="dev.ssh.password", Value="DevOps321", type="SecureString"},
+    {Name="dev.ssh.pass", Value="DevOps321", type="SecureString"},
     {Name="dev.mongo.host", Value="mongodb.practise-devops.online", type="SecureString"},
     {Name="dev.docdb.user", Value="admin1", type="SecureString"},
     {Name="dev.docdb.pass", Value="RoboShop1", type="SecureString"} 

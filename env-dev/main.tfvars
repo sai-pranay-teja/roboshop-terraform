@@ -239,7 +239,11 @@ app={
     }
 }
 
+prometheus={
+    Name="prometheus"
+    instance_type="t3.micro"
 
+}
 
 
 
@@ -301,11 +305,7 @@ app={
 
 }
 
-prometheus={
-    Name="prometheus"
-    instance_type="t3.micro"
 
-    }
 
 
 elk={
