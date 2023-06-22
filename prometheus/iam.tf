@@ -1,13 +1,13 @@
 resource "aws_iam_instance_profile" "access-profile" {
   name = "${var.env}-logs-profile"
-  role = aws_iam_role.full-access-role.name
+  role = aws_iam_role.access-role.name
 }
 
 
 resource "aws_iam_policy_attachment" "access-attachment" {
   name       = "${var.env}-logs-attachment"
-  roles      = [aws_iam_role.full-access-role.name]
-  policy_arn = aws_iam_policy.full-access-policy.arn
+  roles      = [aws_iam_role.access-role.name]
+  policy_arn = aws_iam_policy.access-policy.arn
 }
 
 
@@ -28,8 +28,8 @@ resource "aws_iam_role" "access-role" {
   })
 }
 
-resource "aws_iam_policy" "full-access-policy" {
-  name        = "${var.env}-policy"
+resource "aws_iam_policy" "access-policy" {
+  name        = "${var.env}-policy-logs"
   path = "/"
   policy = jsonencode({
     
