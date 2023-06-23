@@ -20,7 +20,7 @@ module "module-vpc" {
 
 
 
-/* module "docdb" {
+module "docdb" {
     depends_on = [ module.module-vpc ]
     source="git::https://github.com/sai-pranay-teja/module-docdb.git"
     env=var.env
@@ -142,7 +142,7 @@ module "module-app" {
 
 
 
-} */
+}
 
 
 module "prometheus-instance" {
