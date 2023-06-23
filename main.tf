@@ -20,7 +20,7 @@ module "module-vpc" {
 
 
 
-module "docdb" {
+/* module "docdb" {
     depends_on = [ module.module-vpc ]
     source="git::https://github.com/sai-pranay-teja/module-docdb.git"
     env=var.env
@@ -76,7 +76,7 @@ module "elasticache" {
     vpc_id=module.module-vpc["main"].vpc_id
     allow_subnets=lookup(local.subnet_cidr, each.value["allow_subnets"], null)
     
-}
+} */
 
 
 
@@ -145,7 +145,7 @@ module "module-app" {
 }
 
 
-module "prometheus-instance" {
+/* module "prometheus-instance" {
     depends_on = [ module.module-vpc ]
     for_each=var.prometheus
     source = "./prometheus"
@@ -167,7 +167,7 @@ module "elk-instance" {
     env=var.env
     default_public_subnets=module.module-vpc["main"].default_public_subnets
   
-}
+} */
 
 
 /* module "security-groups" {
