@@ -76,7 +76,7 @@ module "elasticache" {
     vpc_id=module.module-vpc["main"].vpc_id
     allow_subnets=lookup(local.subnet_cidr, each.value["allow_subnets"], null)
     
-} */
+}
 
 
 
@@ -145,7 +145,7 @@ module "module-app" {
 }
 
 
-/* module "prometheus-instance" {
+module "prometheus-instance" {
     depends_on = [ module.module-vpc ]
     for_each=var.prometheus
     source = "./prometheus"

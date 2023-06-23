@@ -118,7 +118,7 @@ elasticache={
 
 
 
-} */
+}
 
 
 rabbitmq={
@@ -255,7 +255,7 @@ elk={
         instance_type="t3.large" 
     }
 
-}
+} */
 
 
 

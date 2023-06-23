@@ -5,11 +5,11 @@ variable "default_vpc_id" {}
 
 /* variable "docdb"{}
 variable "rds"{}
-variable "elasticache"{} */
+variable "elasticache"{}
 variable "rabbitmq" {}
 variable "lb" {}
 variable "app" {}
-/* variable "prometheus"{}
+variable "prometheus"{}
 variable "elk" {} */
 
 /* variable "components" {}
