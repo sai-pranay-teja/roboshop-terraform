@@ -19,12 +19,12 @@ git:
 # 	cd /home/pranay/roboshop/roboshop-terraform/s3; terraform destroy -auto-approve
 
 
-instances-apply: 
+jenkins-apply: 
 	cd /home/pranay/roboshop/roboshop-terraform/jenkins; terraform init
 	terraform apply -var-file=env-dev/main.tfvars -auto-approve
 
 
-instances-destroy:
+jenkins-destroy:
 	cd /home/pranay/roboshop/roboshop-terraform/jenkins; \
 	terraform destroy -var-file=env-dev/main.tfvars -auto-approve
 
