@@ -59,20 +59,3 @@ resource "null_resource" "resource-creation" {
 
   
 }
-
-resource "jenkins_job" "s-jobs" {
-    depends_on = [ aws_spot_instance_request.jenkins ]
-    count = length(var.s-jobs)
-    name     = lookup(element(var.s-jobs, count.index), "name")
-    template = templatefile("${path.module}/config.xml", {
-        repo_url=lookup(element(var.s-jobs, count.index), "repo_url")
-        name     = lookup(element(var.s-jobs, count.index), "name")
-        filename=lookup(element(var.s-jobs, count.index), "filename")
-
-        description = "Roboshop Pipeline for Infra"
-    })
-
-    lifecycle {
-      ignore_changes = [ template ]
-    }
-}
