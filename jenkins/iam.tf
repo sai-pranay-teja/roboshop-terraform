@@ -38,7 +38,11 @@ resource "aws_iam_policy" "access-policy" {
 		{
 			"Sid": "VisualEditor0",
 			"Effect": "Allow",
-			"Action": "ssm:*",
+			"Action": [
+        "ssm:*",
+        "ssm:PutParameter"
+
+      ]
 			"Resource": [
 				"arn:aws:ec2:*:581798224530:instance/*",
 				"arn:aws:ssm:us-east-1:581798224530:parameter/*"
