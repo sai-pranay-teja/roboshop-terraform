@@ -33,16 +33,16 @@ resource "aws_iam_policy" "access-policy" {
   path = "/"
   policy = jsonencode({
     
-    "Version": "2012-10-17",
-    "Statement": [
-      {
-        "Sid": "VisualEditor1",
-        "Effect": "Allow",
-        "Action": "ec2:*",
-        "Resource": "arn:aws:ec2:us-east-1:581798224530:vpc/*"
-        "Resource": "arn:aws:ec2:us-east-1:581798224530:parameter/*"
-		}
-    ]
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Sid": "VisualEditor1",
+          "Effect": "Allow",
+          "Action": "ssm:*",
+          "Resource": "arn:aws:ec2:us-east-1:581798224530:instance/*"
+        }
+	]
+
 
   
   })
