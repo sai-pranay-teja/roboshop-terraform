@@ -39,7 +39,8 @@ resource "aws_iam_policy" "access-policy" {
 			"Effect": "Allow",
 			"Action": [
         "ssm:*",
-        "ssm:PutParameter"
+        "ssm:PutParameter",
+        "ssm:DescribeParameters"
 
       ]
 			"Resource": [
