@@ -20,12 +20,12 @@ git:
 
 
 instances-apply: 
-	rm -rf .terraform* terraform*
-	terraform init
+	cd /home/pranay/roboshop/roboshop-terraform/jenkins; terraform init
 	terraform apply -var-file=env-dev/main.tfvars -auto-approve
 
 
 instances-destroy:
+	cd /home/pranay/roboshop/roboshop-terraform/jenkins; \
 	terraform destroy -var-file=env-dev/main.tfvars -auto-approve
 
 
