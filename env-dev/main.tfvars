@@ -1,6 +1,6 @@
 domain_name="practise-devops.online"
 env="dev"
-default_vpc_id="vpc-0d18c03eafca9b0f5"
+/* default_vpc_id="vpc-0d18c03eafca9b0f5"
 
 vpc={
     main={
@@ -64,7 +64,7 @@ vpc={
     }
 
 
-}
+} */
 
 
 /* docdb={

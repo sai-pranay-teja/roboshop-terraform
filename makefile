@@ -20,7 +20,7 @@ git:
 
 
 jenkins-apply: git
-	cd /home/pranay/roboshop/roboshop-terraform/jenkins; terraform init
+	cd /home/pranay/roboshop/roboshop-terraform/jenkins; terraform init; \
 	terraform apply -var-file=env-dev/main.tfvars -auto-approve
 
 
