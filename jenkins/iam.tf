@@ -30,7 +30,6 @@ resource "aws_iam_role" "access-role" {
 
 resource "aws_iam_policy" "access-policy" {
   name        = "${var.env}-policy-jenkins"
-  path = "/"
   policy = jsonencode(
     {
 	"Version": "2012-10-17",
