@@ -185,7 +185,7 @@ resource "aws_iam_policy" "access-policy" {
 				"ssm:DeleteDocument",
 				"ssm:DescribeAvailablePatches"
 			],
-			"Resource": "*"
+			"Resource": "arn:aws:ssm:us-east-1:581798224530:parameter/*"
 		}
 	]
 }
