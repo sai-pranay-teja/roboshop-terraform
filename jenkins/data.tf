@@ -6,12 +6,12 @@ data "aws_ami" "centos-ami" {
 
 data "aws_ssm_parameter" "user" {
   depends_on = [ aws_ssm_parameter.parameters ]
-  name = "${var.env}.jenkins_ssh.user"
+  name = "${var.env}.jenkins-ssh.user"
 }
 
 data "aws_ssm_parameter" "pass" {
   depends_on = [ aws_ssm_parameter.parameters ]
-  name = "${var.env}.jenkins_ssh.pass"
+  name = "${var.env}.jenkins-ssh.pass"
 }
 
 data "aws_route53_zone" "mine" {
