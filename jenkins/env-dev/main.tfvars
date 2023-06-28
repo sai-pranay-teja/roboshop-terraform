@@ -8,5 +8,5 @@ parameters=[
 
 jenkins={
     Name="jenkins"
-    instance_type="t3a.small"
+    instance_type="t3a.medium"
 }
