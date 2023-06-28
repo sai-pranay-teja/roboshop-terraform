@@ -17,3 +17,5 @@ data "aws_ssm_parameter" "pass" {
 data "aws_route53_zone" "mine" {
   name         = "${var.domain_name}"
 }
+
+data "aws_caller_identity" "current" {}
