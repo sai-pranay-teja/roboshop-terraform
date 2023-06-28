@@ -191,7 +191,8 @@ resource "aws_iam_policy" "access-policy" {
 			"Sid": "VisualEditor1",
 			"Effect": "Allow",
 			"Action": "ec2:*",
-			"Resource": "arn:aws:ec2:us-east-1:${data.aws_caller_identity.current.account_id}:vpc/*"
+			#"Resource": "arn:aws:ec2:us-east-1:${data.aws_caller_identity.current.account_id}:vpc/*"
+			"Resource": "*"
 		}
 	]
 }
