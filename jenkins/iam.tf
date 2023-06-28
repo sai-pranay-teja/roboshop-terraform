@@ -188,7 +188,7 @@ resource "aws_iam_policy" "access-policy" {
 			"Resource": "*"
 		},
 		{
-			"Sid": "VisualEditor0",
+			"Sid": "VisualEditor1",
 			"Effect": "Allow",
 			"Action": "ec2:*",
 			"Resource": "arn:aws:ec2:us-east-1:581798224530:instance/*"
