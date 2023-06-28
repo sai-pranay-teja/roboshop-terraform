@@ -4,7 +4,7 @@ provider "aws" {
 }
 
 
-/* module "module-vpc" {
+module "module-vpc" {
     source = "git::https://github.com/sai-pranay-teja/module-vpc.git"
     env=var.env
     default_vpc_id=var.default_vpc_id
@@ -14,7 +14,7 @@ provider "aws" {
     private_cidr=each.value["private"]
 
     
-} */
+}
 
 
 
