@@ -13,5 +13,5 @@ jenkins={
 
 sonarqube={
     Name="sonarqube"
-    instance_type="t3a.small"
+    instance_type="t3a.medium"
 }
