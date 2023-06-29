@@ -1,7 +1,4 @@
-provider "aws" {
-    region = "us-east-1"
-  
-}
+
 
 resource "aws_route53_record" "sonarqube_dns" {
   allow_overwrite = true
@@ -32,13 +29,13 @@ resource "aws_spot_instance_request" "sonarqube" {
   }
 } 
 
-resource "aws_ec2_tag" "component-tags" {
+resource "aws_ec2_tag" "sonarqube-tags" {
     resource_id = aws_spot_instance_request.sonarqube.spot_instance_id
     key         = "Name"
     value       = "${var.env}-sonarqube"
 }
 
-resource "null_resource" "resource-creation" {
+resource "null_resource" "sonarqube-resource-creation" {
   depends_on = [ aws_spot_instance_request.sonarqube ]
     provisioner "remote-exec" {
     connection {
