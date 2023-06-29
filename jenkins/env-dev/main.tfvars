@@ -10,3 +10,8 @@ jenkins={
     Name="jenkins"
     instance_type="t3a.medium"
 }
+
+sonarqube={
+    Name="sonarqube"
+    instance_type="t3a.small"
+}

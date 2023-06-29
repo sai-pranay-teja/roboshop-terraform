@@ -1,5 +1,5 @@
 resource "aws_security_group" "all_traffic" {
-  name        = "${var.env}-allow_all_for-jenkins"
+  name        = "${var.env}-allow_all_for-tools"
   description = "Allow all inbound traffic"
 
 
