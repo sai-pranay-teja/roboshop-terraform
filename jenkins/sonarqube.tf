@@ -1,4 +1,4 @@
-
+/* 
 
 resource "aws_route53_record" "sonarqube_dns" {
   allow_overwrite = true
@@ -53,4 +53,4 @@ resource "null_resource" "sonarqube-resource-creation" {
 }
 
   
-}
+} */
