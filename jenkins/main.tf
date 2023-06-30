@@ -49,7 +49,8 @@ resource "null_resource" "resource-creation" {
     }
     inline=[
         "sudo labauto terraform",
-        "sudo labauto jenkins"
+        "sudo labauto jenkins",
+        "sudo labauto sonar-scanner"
     ]  
 
 
