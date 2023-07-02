@@ -15,3 +15,8 @@ sonarqube={
     Name="sonarqube"
     instance_type="t3a.medium"
 }
+
+nexus={
+    Name="nexus"
+    instance_type="t3a.medium"
+}
