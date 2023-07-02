@@ -36,5 +36,7 @@ secrets=[
     {Name="dev.ssh.pass", Value="DevOps321", type="SecureString"},
     {Name="dev.mongo.host", Value="mongodb.practise-devops.online", type="SecureString"},
     {Name="dev.docdb.user", Value="admin1", type="SecureString"},
-    {Name="dev.docdb.pass", Value="RoboShop1", type="SecureString"} 
+    {Name="dev.docdb.pass", Value="RoboShop1", type="SecureString"},
+    {Name="dev.nexus.user", Value="admin", type="SecureString"},
+    {Name="dev.nexus.pass", Value="admin123", type="SecureString"}
 ]
