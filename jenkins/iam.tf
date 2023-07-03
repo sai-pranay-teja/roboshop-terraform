@@ -193,6 +193,12 @@ resource "aws_iam_policy" "access-policy" {
 			"Action": "ec2:*",
 			#"Resource": "arn:aws:ec2:us-east-1:${data.aws_caller_identity.current.account_id}:vpc/*"
 			"Resource": "*"
+		},
+		{
+			"Sid": "VisualEditor0",
+			"Effect": "Allow",
+			"Action": "s3:*",
+			"Resource": "*"
 		}
 	]
 }
