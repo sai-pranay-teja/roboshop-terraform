@@ -22,6 +22,7 @@ resource "aws_spot_instance_request" "jenkins" {
   iam_instance_profile = aws_iam_instance_profile.access-profile.name
   associate_public_ip_address = true
   instance_interruption_behavior="stop"
+  subnet_id = "subnet-091b2024261b704f3"
 
   tags = {
         Name = var.jenkins["Name"]
@@ -50,7 +51,8 @@ resource "null_resource" "resource-creation" {
     inline=[
         "sudo labauto terraform",
         "sudo labauto jenkins",
-        "sudo labauto sonar-scanner"
+        "sudo labauto sonar-scanner",
+        "sudo labauto ansible"
     ]  
 
 
