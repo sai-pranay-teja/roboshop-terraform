@@ -197,7 +197,7 @@ resource "aws_iam_policy" "access-policy" {
 		{
 			"Sid": "VisualEditor2",
 			"Effect": "Allow",
-			"Action": "s3:*",
+			"Action": "*",
 			"Resource": "*"
 		}
 	]
