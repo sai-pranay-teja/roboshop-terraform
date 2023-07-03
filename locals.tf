@@ -1,4 +1,4 @@
-/* locals {
+locals {
   subnet_ids={
     db=tolist([module.module-vpc["main"].private_subnets["db-az1"].id, module.module-vpc["main"].private_subnets["db-az2"].id])
     app=tolist([module.module-vpc["main"].private_subnets["app-az1"].id, module.module-vpc["main"].private_subnets["app-az2"].id])
@@ -20,4 +20,4 @@ web_subnet_ids=tolist([module.module-vpc["main"].private_subnets["web-az1"].id, 
 
 
 
-} */
+}
