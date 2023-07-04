@@ -33,7 +33,7 @@ git:
 # 	cd /home/pranay/roboshop/roboshop-terraform/parameters; terraform init -backend-config env-dev/state.tfvars; \
 # 	terraform apply -var-file=env-dev/main.tfvars -auto-approve
 
-jenkins-apply:
+jenkins-apply: git
 	cd /home/pranay/roboshop/roboshop-terraform/jenkins; terraform init; \
 	terraform apply -var-file=env-dev/main.tfvars -auto-approve
 
