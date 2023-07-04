@@ -180,7 +180,10 @@ module "eks" {
   MIN_SIZE           = 1
 }
 
-
+output "endpoint" {
+    value=module.eks.endpoint
+  
+}
 
 /* output "MINIKUBE_SERVER" {
   value = "ssh centos@${module.minikube.public_ip}"
