@@ -179,6 +179,7 @@ module "minikube" {
   aws_subnet_id       = lookup(local.subnet_ids, "public", null)[0]
   hosted_zone         = "practise-devops.online"
   hosted_zone_private = false
+  ami_image_id="ami-05cc9fb580aa630a1"
 
   tags = {
     Name = "Minikube"
