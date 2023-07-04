@@ -1,4 +1,4 @@
-
+/* 
 
 resource "aws_route53_record" "nexus_dns" {
   allow_overwrite = true
@@ -35,4 +35,4 @@ resource "aws_ec2_tag" "nexus-tags" {
     value       = "${var.env}-nexus"
 }
 
-
+ */
