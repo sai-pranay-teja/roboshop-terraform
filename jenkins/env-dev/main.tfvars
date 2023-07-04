@@ -11,7 +11,7 @@ jenkins={
     instance_type="t3a.medium"
 }
 
-sonarqube={
+/* sonarqube={
     Name="sonarqube"
     instance_type="t3a.medium"
 }
@@ -19,4 +19,4 @@ sonarqube={
 nexus={
     Name="nexus"
     instance_type="t3a.medium"
-}
+} */
