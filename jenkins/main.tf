@@ -53,7 +53,7 @@ resource "null_resource" "resource-creation" {
         "sudo labauto jenkins",
         "sudo labauto kubergrunt",
         "sudo labauto kubectl"
-        #"ssh-keygen"
+        #"sudo chmod 666 /var/run/docker.sock"
         #"sudo labauto sonar-scanner",
         #"sudo labauto ansible"
     ]  
