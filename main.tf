@@ -181,7 +181,7 @@ module "eks" {
 }
 
 output "endpoint" {
-    value=module.eks.endpoint
+    value=module.eks[0].endpoint
   
 }
 
