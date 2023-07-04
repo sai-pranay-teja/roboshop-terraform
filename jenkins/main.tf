@@ -51,7 +51,8 @@ resource "null_resource" "resource-creation" {
     inline=[
         "sudo labauto terraform",
         "sudo labauto jenkins",
-        "sudo labauto kubectl"
+        "sudo labauto kubectl",
+        "sudo ssh key-gen"
         #"sudo labauto sonar-scanner",
         #"sudo labauto ansible"
     ]  
