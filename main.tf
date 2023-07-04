@@ -169,31 +169,8 @@ module "elk-instance" {
   
 } */
 
-module "minikube" {
-  source = "github.com/scholzj/terraform-aws-minikube"
 
-  aws_region          = "us-east-1"
-  cluster_name        = "minikube"
-  aws_instance_type   = "t3.medium"
-  ssh_public_key      = "~/.ssh/id_rsa.pub"
-  aws_subnet_id       = lookup(local.subnet_ids, "public", null)[0]
-  hosted_zone         = "practise-devops.online"
-  hosted_zone_private = false
-  ami_image_id="ami-05cc9fb580aa630a1"
-
-  tags = {
-    Name = "Minikube"
-  }
-
-  addons = [
-    "https://raw.githubusercontent.com/scholzj/terraform-aws-minikube/master/addons/storage-class.yaml",
-    "https://raw.githubusercontent.com/scholzj/terraform-aws-minikube/master/addons/heapster.yaml",
-    "https://raw.githubusercontent.com/scholzj/terraform-aws-minikube/master/addons/dashboard.yaml",
-    "https://raw.githubusercontent.com/scholzj/terraform-aws-minikube/master/addons/external-dns.yaml"
-  ]
-}
-
-/* module "eks" {
+module "eks" {
   source             = "github.com/r-devops/tf-module-eks"
   ENV                = var.env
   PRIVATE_SUBNET_IDS = lookup(local.subnet_ids, "app", null)
@@ -201,7 +178,7 @@ module "minikube" {
   DESIRED_SIZE       = 1
   MAX_SIZE           = 1
   MIN_SIZE           = 1
-} */
+}
 
 
 
