@@ -78,7 +78,7 @@ resource "aws_route53_record" "jenkins_dns" {
   type            = "A"
   zone_id         = data.aws_route53_zone.mine.zone_id
 
-  records = [aws_instance_request.jenkins.public_ip]
+  records = [aws_instance.jenkins.public_ip]
 }
 
 resource "aws_instance_request" "jenkins" {
@@ -100,16 +100,16 @@ resource "aws_instance_request" "jenkins" {
 } 
 
 resource "aws_ec2_tag" "component-tags" {
-    resource_id = aws_instance_request.jenkins.id
+    resource_id = aws_instance.jenkins.id
     key         = "Name"
     value       = "${var.env}-jenkins"
 }
 
 resource "null_resource" "resource-creation" {
-  depends_on = [ aws_instance_request.jenkins ]
+  depends_on = [ aws_instance.jenkins ]
     provisioner "remote-exec" {
     connection {
-      host = aws_instance_request.jenkins.public_ip
+      host = aws_instance.jenkins.public_ip
       user = data.aws_ssm_parameter.user.value
       password = data.aws_ssm_parameter.pass.value
     }
