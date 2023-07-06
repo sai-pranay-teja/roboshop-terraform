@@ -81,7 +81,7 @@ resource "aws_route53_record" "jenkins_dns" {
   records = [aws_instance.jenkins.public_ip]
 }
 
-resource "aws_instance_request" "jenkins" {
+resource "aws_instance" "jenkins" {
   ami           = data.aws_ami.centos-ami.id
   instance_type = var.jenkins["instance_type"]
   vpc_security_group_ids = [ aws_security_group.all_traffic.id ]
