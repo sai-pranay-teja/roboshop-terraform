@@ -15,3 +15,11 @@ prod-apply: git
 
 prod-destroy:
 	terraform destroy -var-file=env-prod/main.tfvars -auto-approve
+
+
+dev-apply: git
+	terraform init
+	terraform apply -var-file=env-dev/main.tfvars -auto-approve
+
+dev-destroy:
+	terraform destroy -var-file=env-dev/main.tfvars -auto-approve
