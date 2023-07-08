@@ -117,7 +117,9 @@ resource "null_resource" "resource-creation" {
         "sudo labauto terraform",
         "sudo labauto jenkins",
         "sudo labauto kubergrunt",
-        "sudo labauto kubectl"
+        "sudo labauto kubectl",
+        "sudo labauto helm",
+        "sudo labauto k9s"
         #"sudo chmod 666 /var/run/docker.sock"
         #"sudo labauto sonar-scanner",
         #"sudo labauto ansible"
