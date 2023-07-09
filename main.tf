@@ -3,7 +3,7 @@ provider "aws" {
   
 }
 
-/* 
+
 module "module-vpc" {
     source = "git::https://github.com/sai-pranay-teja/module-vpc.git"
     env=var.env
@@ -14,13 +14,13 @@ module "module-vpc" {
     private_cidr=each.value["private"]
 
     
-} */
+}
 
 
 
 
 
-/* module "docdb" {
+module "docdb" {
     depends_on = [ module.module-vpc ]
     source="git::https://github.com/sai-pranay-teja/module-docdb.git"
     env=var.env
@@ -99,7 +99,7 @@ module "rabbitmq" {
 
 
 
-module "module-alb" {
+/* module "module-alb" {
     depends_on=[ module.module-vpc ]
     source="git::https://github.com/sai-pranay-teja/module-lb.git"
     env=var.env
