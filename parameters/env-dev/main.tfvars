@@ -47,7 +47,7 @@ parameters=[
     {Name="dev.frontend.cart_url", Value="http://dev-cart.practise-devops.online:80/",type="String"},
     {Name="dev.frontend.shipping_url", Value="http://dev-shipping.practise-devops.online:80/",type="String"},
     {Name="dev.frontend.payment_url", Value="http://dev-payment.practise-devops.online:80/",type="String"},
-    {Name="dev.shipping.cart_endpoint", Value="dev-cart.practise-devops.online:80", type="String"},
+    {Name="dev.shipping.cart_endpoint", Value="cart:8080", type="String"},
     {Name="dev.shipping.db_host", Value="mysql.practise-devops.online", type="String"},
     {Name="dev.user.mongo", Value="true", type="String"},
     {Name="dev.user.redis_host", Value="redis.practise-devops.online", type="String"},
