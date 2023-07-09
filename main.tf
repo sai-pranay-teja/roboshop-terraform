@@ -171,6 +171,7 @@ module "elk-instance" {
 
 
 module "eks" {
+    depends_on = [ module.module-vpc ]
   source             = "github.com/r-devops/tf-module-eks"
   ENV                = var.env
   PRIVATE_SUBNET_IDS = lookup(local.subnet_ids, "app", null)
