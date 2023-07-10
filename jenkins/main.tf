@@ -120,7 +120,7 @@ resource "null_resource" "resource-creation" {
         "sudo labauto kubectl",
         "sudo labauto helm",
         "sudo labauto k9s",
-        "for i in cart catalogue user payment shipping frontend roboshop-k8s; do git clone https://github.com/sai-pranay-teja/$i; done"
+        "for i in cart catalogue user payment shipping frontend roboshop-helm-chart; do git clone https://github.com/sai-pranay-teja/$i; done"
         #"sudo chmod 666 /var/run/docker.sock"
         #"sudo labauto sonar-scanner",
         #"sudo labauto ansible"
