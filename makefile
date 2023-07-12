@@ -47,7 +47,7 @@ jenkins-apply: parameters-apply
 # instances-destroy:
 # 	terraform destroy -var-file=env-dev/main.tfvars -auto-approve
 
-parameters-destroy: jenkins-destroy
+parameters-destroy: 
 	cd /home/pranay/roboshop/roboshop-terraform/parameters; terraform destroy -var-file=env-dev/main.tfvars -auto-approve
 
 
